@@ -1,0 +1,35 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.7612263560295105,
+    "text": "不客气",
+    "words": [
+      {
+        "text": "不",
+        "start": 0.36,
+        "end": 0.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001680836794548668
+      },
+      {
+        "text": "客",
+        "start": 0.72,
+        "end": 1.02,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000040531076592742465
+      },
+      {
+        "text": "气",
+        "start": 1.02,
+        "end": 1.14,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000019192511899746023
+      }
+    ],
+    "transcription_id": "oEKC2F3eqfpWO0LVDS4Z",
+    "audio_duration_secs": 1.462857
+  }
+]

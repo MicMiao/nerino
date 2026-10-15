@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.9996334910392761,
+    "text": "チーズ。",
+    "words": [
+      {
+        "text": "チ",
+        "start": 0.48,
+        "end": 0.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07814320176839828
+      },
+      {
+        "text": "ー",
+        "start": 0.64,
+        "end": 0.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07814320176839828
+      },
+      {
+        "text": "ズ",
+        "start": 0.84,
+        "end": 1.1,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07814320176839828
+      },
+      {
+        "text": "。",
+        "start": 1.1,
+        "end": 1.101,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.11669928580522537
+      }
+    ],
+    "transcription_id": "BJojveVhEE1PEdm7iCU7",
+    "audio_duration_secs": 1.462857
+  }
+]

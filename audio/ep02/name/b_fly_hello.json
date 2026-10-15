@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.7944416999816895,
+    "text": "小黑，你好。",
+    "words": [
+      {
+        "text": "小",
+        "start": 0.46,
+        "end": 0.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000033378546504536644
+      },
+      {
+        "text": "黑",
+        "start": 0.7,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00011252723925281316
+      },
+      {
+        "text": "，",
+        "start": 0.82,
+        "end": 1.24,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00975803378969431
+      },
+      {
+        "text": "你",
+        "start": 1.24,
+        "end": 1.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000017881377516459906
+      },
+      {
+        "text": "好",
+        "start": 1.56,
+        "end": 1.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000017881377516459906
+      },
+      {
+        "text": "。",
+        "start": 1.7,
+        "end": 1.7009999999999998,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.18016347289085388
+      }
+    ],
+    "transcription_id": "85fSgZoteYpFqKnxO4uz",
+    "audio_duration_secs": 2.063673
+  }
+]

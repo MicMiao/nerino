@@ -1,0 +1,99 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9989877343177795,
+    "text": "第二集，你叫什么名字？",
+    "words": [
+      {
+        "text": "第",
+        "start": 0.32,
+        "end": 0.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0004884004010818899
+      },
+      {
+        "text": "二",
+        "start": 0.74,
+        "end": 1.04,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0004884004010818899
+      },
+      {
+        "text": "集",
+        "start": 1.2,
+        "end": 1.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0014667478390038013
+      },
+      {
+        "text": "，",
+        "start": 1.42,
+        "end": 1.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.24397951364517212
+      },
+      {
+        "text": "你",
+        "start": 2.34,
+        "end": 2.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000013351351299206726
+      },
+      {
+        "text": "叫",
+        "start": 2.48,
+        "end": 2.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -2.3841855067985307e-7
+      },
+      {
+        "text": "什",
+        "start": 2.8,
+        "end": 2.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000015497195136049413
+      },
+      {
+        "text": "么",
+        "start": 2.98,
+        "end": 3.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000015497195136049413
+      },
+      {
+        "text": "名",
+        "start": 3.16,
+        "end": 3.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "字",
+        "start": 3.66,
+        "end": 3.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "？",
+        "start": 3.7,
+        "end": 3.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005447716102935374
+      }
+    ],
+    "transcription_id": "c9YpfyrERyDefVD8YYUj",
+    "audio_duration_secs": 4.04898
+  }
+]

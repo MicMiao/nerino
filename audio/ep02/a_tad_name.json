@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9326096177101135,
+    "text": "我叫小蝌蚪。",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.4,
+        "end": 0.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000032186455882765586
+      },
+      {
+        "text": "叫",
+        "start": 0.7,
+        "end": 0.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010490362910786644
+      },
+      {
+        "text": "小",
+        "start": 2.3,
+        "end": 2.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.001256391522474587
+      },
+      {
+        "text": "蝌",
+        "start": 2.66,
+        "end": 2.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.017788046970963478
+      },
+      {
+        "text": "蚪",
+        "start": 3.06,
+        "end": 3.28,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003849719068966806
+      },
+      {
+        "text": "。",
+        "start": 3.28,
+        "end": 3.2809999999999997,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0014207994099706411
+      }
+    ],
+    "transcription_id": "CIw6YrZpEk1V7RxSEGA6",
+    "audio_duration_secs": 3.63102
+  }
+]

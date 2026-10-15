@@ -1,0 +1,19 @@
+[
+  {
+    "language_code": "eng",
+    "language_probability": 0.12450417876243591,
+    "text": "왜?",
+    "words": [
+      {
+        "text": "왜?",
+        "start": 0.4,
+        "end": 0.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0365453299600631
+      }
+    ],
+    "transcription_id": "3ZfeEMUuyfntONnkhWld",
+    "audio_duration_secs": 1.044898
+  }
+]

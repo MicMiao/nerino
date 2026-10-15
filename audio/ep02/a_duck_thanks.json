@@ -1,0 +1,35 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9557822942733765,
+    "text": "谢谢。",
+    "words": [
+      {
+        "text": "谢",
+        "start": 0.46,
+        "end": 0.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0010455148294568062
+      },
+      {
+        "text": "谢",
+        "start": 0.6,
+        "end": 0.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0010455148294568062
+      },
+      {
+        "text": "。",
+        "start": 0.84,
+        "end": 0.841,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.11481344699859619
+      }
+    ],
+    "transcription_id": "6Ls1dRU6LYVuOLggJohn",
+    "audio_duration_secs": 1.149388
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "wuu",
+    "language_probability": 0.9636790752410889,
+    "text": "下一个。",
+    "words": [
+      {
+        "text": "下",
+        "start": 0.48,
+        "end": 0.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00020239688456058502
+      },
+      {
+        "text": "一",
+        "start": 0.64,
+        "end": 0.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00020239688456058502
+      },
+      {
+        "text": "个",
+        "start": 0.82,
+        "end": 1.06,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00020239688456058502
+      },
+      {
+        "text": "。",
+        "start": 1.06,
+        "end": 1.061,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6932904720306396
+      }
+    ],
+    "transcription_id": "gOS6CS9ekpZ7QVT35RDi",
+    "audio_duration_secs": 1.38449
+  }
+]

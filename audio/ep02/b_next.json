@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9976819157600403,
+    "text": "下集，他是谁？",
+    "words": [
+      {
+        "text": "下",
+        "start": 0.58,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006270212179515511
+      },
+      {
+        "text": "集",
+        "start": 0.84,
+        "end": 1.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000063774932641536
+      },
+      {
+        "text": "，",
+        "start": 1.2,
+        "end": 1.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.09941211342811584
+      },
+      {
+        "text": "他",
+        "start": 1.84,
+        "end": 2.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07163859903812408
+      },
+      {
+        "text": "是",
+        "start": 2.3,
+        "end": 2.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07163859903812408
+      },
+      {
+        "text": "谁",
+        "start": 2.64,
+        "end": 2.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "？",
+        "start": 2.84,
+        "end": 2.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003091811086051166
+      }
+    ],
+    "transcription_id": "nIOTmAVEn1pr5UsGTl8w",
+    "audio_duration_secs": 3.265306
+  }
+]

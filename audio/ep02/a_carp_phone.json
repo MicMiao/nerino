@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.9992830157279968,
+    "text": "ウェイ。",
+    "words": [
+      {
+        "text": "ウ",
+        "start": 0.28,
+        "end": 0.36,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6009788513183594
+      },
+      {
+        "text": "ェ",
+        "start": 0.36,
+        "end": 0.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6009788513183594
+      },
+      {
+        "text": "イ",
+        "start": 0.46,
+        "end": 0.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6009788513183594
+      },
+      {
+        "text": "。",
+        "start": 0.58,
+        "end": 0.581,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5761958956718445
+      }
+    ],
+    "transcription_id": "YftP6XA9UoqojCnCIOvP",
+    "audio_duration_secs": 1.07102
+  }
+]

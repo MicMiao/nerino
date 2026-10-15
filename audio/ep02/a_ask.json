@@ -1,0 +1,83 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9987165331840515,
+    "text": "小蝌蚪叫什么名字？",
+    "words": [
+      {
+        "text": "小",
+        "start": 0.56,
+        "end": 0.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -3.576278118089249e-7
+      },
+      {
+        "text": "蝌",
+        "start": 0.94,
+        "end": 0.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00007891343557275832
+      },
+      {
+        "text": "蚪",
+        "start": 0.96,
+        "end": 1.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006890059739816934
+      },
+      {
+        "text": "叫",
+        "start": 1.4,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "什",
+        "start": 1.72,
+        "end": 1.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000011920922133867862
+      },
+      {
+        "text": "么",
+        "start": 1.9,
+        "end": 2.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000011920922133867862
+      },
+      {
+        "text": "名",
+        "start": 2.08,
+        "end": 2.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "字",
+        "start": 2.4,
+        "end": 2.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "？",
+        "start": 2.64,
+        "end": 2.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0007236960809677839
+      }
+    ],
+    "transcription_id": "mBAsB4WkUDYtHPd1rKUM",
+    "audio_duration_secs": 3.004082
+  }
+]

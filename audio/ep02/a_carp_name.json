@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.8425401449203491,
+    "text": "我叫鲤鱼阿姨。",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.28,
+        "end": 0.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000014305104514278355
+      },
+      {
+        "text": "叫",
+        "start": 0.42,
+        "end": 0.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "鲤",
+        "start": 0.68,
+        "end": 0.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.031122548505663872
+      },
+      {
+        "text": "鱼",
+        "start": 0.88,
+        "end": 1.06,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00024184639914892614
+      },
+      {
+        "text": "阿",
+        "start": 1.06,
+        "end": 1.32,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000014424220353248529
+      },
+      {
+        "text": "姨",
+        "start": 1.32,
+        "end": 1.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00013863079948350787
+      },
+      {
+        "text": "。",
+        "start": 1.58,
+        "end": 1.581,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.14267726242542267
+      }
+    ],
+    "transcription_id": "ACGMghLQmmZdpHGOJyHJ",
+    "audio_duration_secs": 2.063673
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9743459820747375,
+    "text": "我不是学生，我是老师。",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.5,
+        "end": 0.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007986990567587782
+      },
+      {
+        "text": "不",
+        "start": 0.86,
+        "end": 1.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "是",
+        "start": 1.2,
+        "end": 1.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "学",
+        "start": 1.44,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015020257706055418
+      },
+      {
+        "text": "生",
+        "start": 1.72,
+        "end": 1.7209999999999999,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000015020257706055418
+      },
+      {
+        "text": "，",
+        "start": 1.98,
+        "end": 2.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003369478799868375
+      },
+      {
+        "text": "我",
+        "start": 2.54,
+        "end": 2.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000033378546504536644
+      },
+      {
+        "text": "是",
+        "start": 2.82,
+        "end": 3.02,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000033378546504536644
+      },
+      {
+        "text": "老",
+        "start": 3.02,
+        "end": 3.34,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000250339189733495
+      },
+      {
+        "text": "师",
+        "start": 3.34,
+        "end": 3.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000250339189733495
+      },
+      {
+        "text": "。",
+        "start": 3.56,
+        "end": 3.561,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.1269388645887375
+      }
+    ],
+    "transcription_id": "OCaIA0BRWwdnGqt3XNmD",
+    "audio_duration_secs": 3.918367
+  }
+]

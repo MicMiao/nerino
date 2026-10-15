@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.6804835200309753,
+    "text": "我叫小黑",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.3,
+        "end": 0.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "叫",
+        "start": 0.42,
+        "end": 0.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -3.576278118089249e-7
+      },
+      {
+        "text": "小",
+        "start": 0.72,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -3.576278118089249e-7
+      },
+      {
+        "text": "黑",
+        "start": 0.92,
+        "end": 1.04,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003373566141817719
+      }
+    ],
+    "transcription_id": "XF9V7W646QjYWDjguFJr",
+    "audio_duration_secs": 1.410612
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9989110827445984,
+    "text": "我不是中国人，我是意大利人。",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.34,
+        "end": 0.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000020265558760002023
+      },
+      {
+        "text": "不",
+        "start": 0.48,
+        "end": 0.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "是",
+        "start": 0.66,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "中",
+        "start": 0.82,
+        "end": 1.04,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000014185804502631072
+      },
+      {
+        "text": "国",
+        "start": 1.04,
+        "end": 1.24,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000014185804502631072
+      },
+      {
+        "text": "人",
+        "start": 1.4,
+        "end": 1.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000014185804502631072
+      },
+      {
+        "text": "，",
+        "start": 1.46,
+        "end": 2.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006961580220377073
+      },
+      {
+        "text": "我",
+        "start": 2.16,
+        "end": 2.32,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010371154530730564
+      },
+      {
+        "text": "是",
+        "start": 2.32,
+        "end": 2.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010371154530730564
+      },
+      {
+        "text": "意",
+        "start": 2.46,
+        "end": 2.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00026556302327662706
+      },
+      {
+        "text": "大",
+        "start": 2.6,
+        "end": 2.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00026556302327662706
+      },
+      {
+        "text": "利",
+        "start": 2.8,
+        "end": 3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00026556302327662706
+      },
+      {
+        "text": "人",
+        "start": 3.12,
+        "end": 3.24,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "。",
+        "start": 3.24,
+        "end": 3.241,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.003179021645337343
+      }
+    ],
+    "transcription_id": "U3ZMojZxIEc2afa2oViH",
+    "audio_duration_secs": 3.63102
+  }
+]

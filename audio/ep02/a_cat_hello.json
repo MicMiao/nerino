@@ -1,0 +1,35 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9836771488189697,
+    "text": "你好。",
+    "words": [
+      {
+        "text": "你",
+        "start": 0.34,
+        "end": 0.52,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0005060345865786076
+      },
+      {
+        "text": "好",
+        "start": 0.54,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0005060345865786076
+      },
+      {
+        "text": "。",
+        "start": 0.94,
+        "end": 0.941,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.029864158481359482
+      }
+    ],
+    "transcription_id": "711Kk7gUgHVafdVUCsQk",
+    "audio_duration_secs": 1.38449
+  }
+]

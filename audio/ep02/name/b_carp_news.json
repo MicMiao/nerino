@@ -1,0 +1,83 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.5168367624282837,
+    "text": "喂，小蝌蚪叫小黑。",
+    "words": [
+      {
+        "text": "喂",
+        "start": 0.42,
+        "end": 0.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0008556757238693535
+      },
+      {
+        "text": "，",
+        "start": 0.62,
+        "end": 0.621,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0008108903421089053
+      },
+      {
+        "text": "小",
+        "start": 1.48,
+        "end": 1.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -8.344646857949556e-7
+      },
+      {
+        "text": "蝌",
+        "start": 1.6,
+        "end": 1.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00007819823804311454
+      },
+      {
+        "text": "蚪",
+        "start": 1.82,
+        "end": 2.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005376194530981593
+      },
+      {
+        "text": "叫",
+        "start": 2.42,
+        "end": 2.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003814624506048858
+      },
+      {
+        "text": "小",
+        "start": 2.62,
+        "end": 2.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -3.576278118089249e-7
+      },
+      {
+        "text": "黑",
+        "start": 2.92,
+        "end": 3.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000018954096958623268
+      },
+      {
+        "text": "。",
+        "start": 3.2,
+        "end": 3.201,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.38767290115356445
+      }
+    ],
+    "transcription_id": "7sxGqcp5EqEcc8mWRmlk",
+    "audio_duration_secs": 3.709388
+  }
+]

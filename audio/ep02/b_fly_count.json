@@ -1,0 +1,51 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.7301292419433594,
+    "text": "一、二、三",
+    "words": [
+      {
+        "text": "一",
+        "start": 0.72,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.011454178020358086
+      },
+      {
+        "text": "、",
+        "start": 0.94,
+        "end": 0.941,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6936444044113159
+      },
+      {
+        "text": "二",
+        "start": 1.54,
+        "end": 1.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00017438798386137933
+      },
+      {
+        "text": "、",
+        "start": 1.76,
+        "end": 1.761,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005221230458118953
+      },
+      {
+        "text": "三",
+        "start": 2.38,
+        "end": 2.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006460934673668817
+      }
+    ],
+    "transcription_id": "1EpOO7tFK9LROTPfzQVo",
+    "audio_duration_secs": 3.056327
+  }
+]

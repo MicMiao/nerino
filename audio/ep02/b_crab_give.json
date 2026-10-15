@@ -1,0 +1,19 @@
+[
+  {
+    "language_code": "rus",
+    "language_probability": 0.8860219717025757,
+    "text": "Кенни",
+    "words": [
+      {
+        "text": "Кенни",
+        "start": 0.28,
+        "end": 0.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.12927884601813275
+      }
+    ],
+    "transcription_id": "D1AMT1XgaRW2WuD4naGr",
+    "audio_duration_secs": 1.28
+  }
+]

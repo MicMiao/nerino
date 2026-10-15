@@ -1,0 +1,99 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9415791034698486,
+    "text": "你好，我叫蜻蜓。再见。",
+    "words": [
+      {
+        "text": "你",
+        "start": 0.34,
+        "end": 0.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002861018856492592
+      },
+      {
+        "text": "好",
+        "start": 0.48,
+        "end": 0.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002861018856492592
+      },
+      {
+        "text": "，",
+        "start": 0.76,
+        "end": 1.38,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000008821448318485636
+      },
+      {
+        "text": "我",
+        "start": 1.4,
+        "end": 1.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -7.152555099310121e-7
+      },
+      {
+        "text": "叫",
+        "start": 1.54,
+        "end": 1.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "蜻",
+        "start": 1.78,
+        "end": 2.06,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.028479289263486862
+      },
+      {
+        "text": "蜓",
+        "start": 2.06,
+        "end": 2.36,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0010143141262233257
+      },
+      {
+        "text": "。",
+        "start": 2.36,
+        "end": 2.3609999999999998,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.003177833277732134
+      },
+      {
+        "text": "再",
+        "start": 2.84,
+        "end": 3.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002264974000354414
+      },
+      {
+        "text": "见",
+        "start": 3.08,
+        "end": 3.34,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000021815061700181104
+      },
+      {
+        "text": "。",
+        "start": 3.34,
+        "end": 3.3409999999999997,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07906059920787811
+      }
+    ],
+    "transcription_id": "amZub2NznLvui4A2NCXw",
+    "audio_duration_secs": 3.709388
+  }
+]

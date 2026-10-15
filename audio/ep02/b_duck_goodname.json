@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9393509030342102,
+    "text": "好名字。",
+    "words": [
+      {
+        "text": "好",
+        "start": 0.64,
+        "end": 0.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -8.344646857949556e-7
+      },
+      {
+        "text": "名",
+        "start": 0.8,
+        "end": 1.14,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000012040065485052764
+      },
+      {
+        "text": "字",
+        "start": 1.14,
+        "end": 1.36,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000012040065485052764
+      },
+      {
+        "text": "。",
+        "start": 1.36,
+        "end": 1.361,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.14294801652431488
+      }
+    ],
+    "transcription_id": "mBGAjnt6rHXIyibqVW4M",
+    "audio_duration_secs": 1.828571
+  }
+]
