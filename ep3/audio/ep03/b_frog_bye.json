@@ -1,0 +1,27 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.8331905603408813,
+    "text": "再见",
+    "words": [
+      {
+        "text": "再",
+        "start": 0.4,
+        "end": 0.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000019073468138230965
+      },
+      {
+        "text": "见",
+        "start": 0.56,
+        "end": 0.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003707340147229843
+      }
+    ],
+    "transcription_id": "TMxFdY5TYXCmYQhDeJaC",
+    "audio_duration_secs": 1.332245
+  }
+]

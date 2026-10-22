@@ -1,0 +1,123 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 1,
+    "text": "她是我的汉语老师，她叫李月。",
+    "words": [
+      {
+        "text": "她",
+        "start": 0.44,
+        "end": 0.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.4741813838481903
+      },
+      {
+        "text": "是",
+        "start": 0.68,
+        "end": 0.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.4741813838481903
+      },
+      {
+        "text": "我",
+        "start": 0.86,
+        "end": 1.02,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "的",
+        "start": 1.02,
+        "end": 1.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.1920928244535389e-7
+      },
+      {
+        "text": "汉",
+        "start": 1.2,
+        "end": 1.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000783174327807501
+      },
+      {
+        "text": "语",
+        "start": 1.48,
+        "end": 1.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000783174327807501
+      },
+      {
+        "text": "老",
+        "start": 1.64,
+        "end": 2.02,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002622600959512056
+      },
+      {
+        "text": "师",
+        "start": 2.02,
+        "end": 2.28,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002622600959512056
+      },
+      {
+        "text": "，",
+        "start": 2.28,
+        "end": 2.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000030517112463712692
+      },
+      {
+        "text": "她",
+        "start": 2.86,
+        "end": 3.04,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003564294092939235
+      },
+      {
+        "text": "叫",
+        "start": 3.04,
+        "end": 3.28,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "李",
+        "start": 3.28,
+        "end": 3.52,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000022172682292875834
+      },
+      {
+        "text": "月",
+        "start": 3.52,
+        "end": 3.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.6026082634925842
+      },
+      {
+        "text": "。",
+        "start": 3.84,
+        "end": 3.8409999999999997,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.03804187476634979
+      }
+    ],
+    "transcription_id": "Z5R1NV698o10qT1shsB6",
+    "audio_duration_secs": 4.179592
+  }
+]

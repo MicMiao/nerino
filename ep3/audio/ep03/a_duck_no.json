@@ -1,0 +1,27 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9996464252471924,
+    "text": "不是",
+    "words": [
+      {
+        "text": "不",
+        "start": 0.44,
+        "end": 0.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.011532546021044254
+      },
+      {
+        "text": "是",
+        "start": 0.64,
+        "end": 0.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.011532546021044254
+      }
+    ],
+    "transcription_id": "JL0Ez23Ms7Q5uFIeDpGo",
+    "audio_duration_secs": 1.332245
+  }
+]

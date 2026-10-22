@@ -355,6 +355,44 @@
       <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>
       <text x="30" y="43" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="34" fill="#f6e3dc">谢</text>
     </symbol>
+    <symbol id="ch-frog" viewBox="0 0 200 190">
+      <g fill="#5e9a63" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="50" cy="152" rx="30" ry="18"/>
+        <ellipse cx="150" cy="152" rx="30" ry="18"/>
+      </g>
+      <ellipse cx="100" cy="128" rx="54" ry="44" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="141" rx="33" ry="27" fill="#f4efe1"/>
+      <g fill="#4f8a58">
+        <circle cx="62" cy="120" r="6"/>
+        <circle cx="140" cy="116" r="5"/>
+        <circle cx="134" cy="146" r="4"/>
+      </g>
+      <ellipse cx="100" cy="90" rx="52" ry="34" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="72" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="128" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="92" rx="50" ry="30" fill="#6ba56e"/>
+      <circle cx="72" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="128" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="73" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="127" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="70.5" cy="58" r="2.4" fill="#fff"/>
+      <circle cx="124.5" cy="58" r="2.4" fill="#fff"/>
+      <path d="M74 98q26 18 52 0" fill="none" stroke="#2f5a3a" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="62" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <ellipse cx="138" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <g fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="76" cy="168" rx="13" ry="8"/>
+        <ellipse cx="124" cy="168" rx="13" ry="8"/>
+      </g>
+      <!-- 李月老师: glasses, a pointer, a green scarf -->
+      <path d="M60 128q40 14 80 0" fill="none" stroke="#b3392b" stroke-width="9" stroke-linecap="round"/>
+      <g fill="none" stroke="#1c1b18" stroke-width="3.4">
+        <circle cx="72" cy="60" r="17"/><circle cx="128" cy="60" r="17"/>
+        <path d="M89 60h22"/>
+      </g>
+      <path d="M150 160L192 96" stroke="#a0784a" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="193" cy="94" r="4.5" fill="#b3392b"/>
+    </symbol>
     <symbol id="seal-ming" viewBox="0 0 60 60">
       <rect x="3" y="3" width="54" height="54" rx="6" fill="#b3392b"/>
       <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>

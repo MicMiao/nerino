@@ -1,0 +1,115 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 1,
+    "text": "他不是我同学，他是我朋友。",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.44,
+        "end": 0.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.003178665181621909
+      },
+      {
+        "text": "不",
+        "start": 0.56,
+        "end": 0.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000036954811548639555
+      },
+      {
+        "text": "是",
+        "start": 0.78,
+        "end": 0.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000036954811548639555
+      },
+      {
+        "text": "我",
+        "start": 0.96,
+        "end": 1.14,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "同",
+        "start": 1.14,
+        "end": 1.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006258291978156194
+      },
+      {
+        "text": "学",
+        "start": 1.66,
+        "end": 1.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00006258291978156194
+      },
+      {
+        "text": "，",
+        "start": 1.84,
+        "end": 1.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000019311717551317997
+      },
+      {
+        "text": "他",
+        "start": 2.58,
+        "end": 2.8,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00004541770613286644
+      },
+      {
+        "text": "是",
+        "start": 2.8,
+        "end": 2.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "我",
+        "start": 2.94,
+        "end": 3.14,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "朋",
+        "start": 3.14,
+        "end": 3.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -2.3841855067985307e-7
+      },
+      {
+        "text": "友",
+        "start": 3.44,
+        "end": 3.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -2.3841855067985307e-7
+      },
+      {
+        "text": "。",
+        "start": 3.7,
+        "end": 3.701,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.023245912045240402
+      }
+    ],
+    "transcription_id": "22GcN6zoBUvKGaRGDhUt",
+    "audio_duration_secs": 3.866122
+  }
+]

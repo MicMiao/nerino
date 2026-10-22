@@ -6,13 +6,14 @@
 //   recorded  the students' takes from the booth (AI voice where a line has no take)
 // An episode only writes its scenes: createEpisode() gives back say(), sayAll() and friends.
 import { Sound } from './sound.js';
-import { Subtitles, clock, loadArt, setupControls, svg, wait } from './stage.js';
+import { Subtitles, clock, fillRuby, loadArt, setupControls, svg, wait } from './stage.js';
 
 const $ = (sel) => document.querySelector(sel);
 
 const MODE_NAMES = { ai: 'Con le voci', live: 'Dal vivo: tocca a voi', recorded: 'Con le vostre registrazioni' };
 const KEYS = { 1: [1, 'ai'], 3: [2, 'ai'] };
 const LEAD_IN = 600; // ms the subtitle is up before the voice starts, so eyes find it first
+// An episode can set "pace" (default 1) to stretch the pauses around every line, and "speed" for the voices.
 
 // The pinyin of a name, written for Italian subtitles: "dòu dou" -> "Dòudou".
 export const nameForSubtitles = (py) => {
@@ -21,13 +22,15 @@ export const nameForSubtitles = (py) => {
 };
 
 // viewTop: where the page's view of the scene starts (its viewBox y), to keep name tags on screen.
-export async function createEpisode({ id, unitPage, parts, reset, stage = {}, tagSpot, viewTop = 0 }) {
+// extraRoles: characters who aren't one of the seven students, e.g. { frog: { it: 'La Maestra Rana', zh: '青蛙老师' } }.
+// Their voices are marked "guest": true in the episode JSON and always speak with the AI voice.
+export async function createEpisode({ id, unitPage, parts, reset, stage = {}, tagSpot, viewTop = 0, extraRoles = {} }) {
   const [EP, CAST] = await Promise.all([
     fetch(`episodes/${id}.json`).then((r) => r.json()),
     fetch('units/cast.json').then((r) => r.json()),
   ]);
   await loadArt();
-  const ROLES = Object.fromEntries(CAST.roles.map((r) => [r.role, r]));
+  const ROLES = { ...Object.fromEntries(CAST.roles.map((r) => [r.role, r])), ...extraRoles };
   const sound = new Sound();
   const subs = new Subtitles($('#subs'));
   const fx = $('#fx');
@@ -172,19 +175,19 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
   ep.say = async (lineId, actor, { keep = 700, subtitles = true } = {}) => {
     const line = ep.line(lineId);
     // Live mode silences the characters only; the narrator always speaks with the AI voice.
-    if (ep.mode === 'live' && line.who !== 'narrator') return sayLive(lineId, line, actor, { subtitles });
+    if (ep.mode === 'live' && line.who !== 'narrator' && !EP.voices[line.who]?.guest) return sayLive(lineId, line, actor, { subtitles });
     const voice = await voiceFor(lineId);
     if (!voice) return sayLive(lineId, line, actor, { subtitles }); // a name line not voiced yet
     if (subtitles) {
       subs.render(line, { speaker: speakerOf(line, voice.take) });
-      await wait(LEAD_IN);
+      await wait(LEAD_IN * (EP.pace ?? 1));
     }
     const playing = sound.playVoice(voice.buffer, { onLevel: actor ? (l) => actor.talkLevel(l) : null });
     ep.currentVoices = [playing];
     if (subtitles) subs.follow(voice.timings, playing.startedAt, sound.ctx);
     await playing.done;
     ep.currentVoices = [];
-    await wait(keep);
+    await wait(keep * (EP.pace ?? 1));
     if (subtitles) subs.clear();
   };
 
@@ -193,7 +196,7 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
     const line = ep.line(lineId);
     if (ep.mode === 'live') return sayLive(lineId, line, null, { actors });
     subs.render(line, { speaker: 'Tutti' });
-    await wait(LEAD_IN);
+    await wait(LEAD_IN * (EP.pace ?? 1));
     const roles = line.voices || [];
     const buffers = await Promise.all(roles.map((r) => sound.load(`audio/${id}/${lineId}.${r}.mp3`).catch(() => null)));
     const timings = await timingsAt(`audio/${id}/${lineId}.${roles[0]}.json`);
@@ -202,7 +205,7 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
     if (playing[0]) subs.follow(timings, playing[0].startedAt, sound.ctx);
     await Promise.all(playing.map((p) => p.done));
     ep.currentVoices = [];
-    await wait(keep);
+    await wait(keep * (EP.pace ?? 1));
     subs.clear();
   };
 
@@ -298,6 +301,101 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
     await wait(300);
   }
 
+  // ---- The question card (pinyin over every character; click an option, or press A B C, to hear it) ----
+  // EP.question: { zh, py, it, line, options: [{ zh, py, sound }] }. showQuestion() leaves it up for the class to
+  // discuss; showQuestion({ vote: true }) also lets the teacher confirm a choice (button or Enter) and resolves
+  // with its index.
+  const EAR =
+    '<svg class="ear" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z"/>' +
+    '<path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+  let ask = null;
+  let optionVoice = null;
+
+  function stopOption() {
+    optionVoice?.stop();
+    optionVoice = null;
+    document.querySelectorAll('.opt.playing').forEach((b) => b.classList.remove('playing'));
+  }
+
+  async function playClip(url, button) {
+    stopOption();
+    button?.classList.add('playing');
+    try {
+      await sound.unlock();
+      const v = sound.playVoice(await sound.load(url));
+      optionVoice = v;
+      await v.done;
+    } finally {
+      button?.classList.remove('playing');
+    }
+  }
+
+  function hear(i) {
+    if (!ask) return;
+    if (ask.vote) pick(i);
+    playClip(EP.question.options[i].sound, $('#q-opts').children[i]);
+  }
+
+  function pick(i) {
+    ask.picked = i;
+    [...$('#q-opts').children].forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
+    $('#q-go').textContent = `✓ ${EP.question.options[i].zh.replace(/？/g, '')}`;
+    $('#q-go').hidden = false;
+  }
+
+  ep.showQuestion = ({ vote = false } = {}) => {
+    const q = EP.question;
+    const title = $('#q-title');
+    title.replaceChildren();
+    fillRuby(title, q.zh, q.py);
+    $('#q-it').textContent = q.it;
+    const buttons = q.options.map((opt, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt';
+      b.setAttribute('aria-pressed', 'false');
+      b.setAttribute('aria-label', `${'ABC'[i]}: ${opt.zh} ${opt.py} (ascolta)`);
+      const key = document.createElement('span');
+      key.className = 'key';
+      key.textContent = 'ABC'[i];
+      const zh = document.createElement('span');
+      zh.className = 'zh';
+      fillRuby(zh, opt.zh, opt.py);
+      b.append(key, zh);
+      b.insertAdjacentHTML('beforeend', EAR);
+      b.addEventListener('click', () => {
+        b.blur(); // so Space keeps pausing instead of pressing this button again
+        hear(i);
+      });
+      return b;
+    });
+    $('#q-opts').replaceChildren(...buttons);
+    $('#q-hint').textContent = vote ? 'Cliccate per ascoltare, poi votate.' : 'Cliccate per ascoltare.';
+    $('#q-go').hidden = true;
+    $('#question').hidden = false;
+    return new Promise((resolve) => {
+      ask = { vote, picked: null, resolve };
+    });
+  };
+
+  ep.hideQuestion = () => {
+    stopOption();
+    ask = null;
+    $('#question').hidden = true;
+  };
+
+  function confirmPick() {
+    if (!ask?.vote || ask.picked === null) return;
+    const { picked, resolve } = ask;
+    ep.hideQuestion();
+    resolve(picked);
+  }
+  $('#q-go').addEventListener('click', confirmPick);
+  $('#q-title').addEventListener('click', () => {
+    $('#q-title').blur();
+    playClip(`audio/${id}/${EP.question.line}.mp3`);
+  });
+
   // ---- Playing a part ------------------------------------------------------------------------
 
   const controls = setupControls({ sound, subs, hud: $('#hud'), onKey: handleKey });
@@ -305,6 +403,7 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
 
   function clearOverlays() {
     for (const el of ['#title-card', '#end', '#cue']) $(el).hidden = true;
+    ep.hideQuestion();
     subs.clear();
     controls.setHud('');
     stopVoices();
@@ -364,6 +463,20 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
 
   async function handleKey(e) {
     const key = e.key.toLowerCase();
+    // The question: A B C play the options; Enter confirms a vote.
+    if (ask) {
+      const i = ['a', 'b', 'c'].indexOf(key);
+      if (i >= 0 && i < EP.question.options.length) {
+        e.preventDefault();
+        hear(i);
+        return true;
+      }
+      if (e.key === 'Enter' && ask.vote) {
+        e.preventDefault();
+        confirmPick();
+        return true;
+      }
+    }
     if (!ep.running) {
       if (KEYS[key]) {
         ep.play(...KEYS[key]);

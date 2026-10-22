@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.7005195617675781,
+    "text": "老师，再见。",
+    "words": [
+      {
+        "text": "老",
+        "start": 0.44,
+        "end": 0.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004529942543740617
+      },
+      {
+        "text": "师",
+        "start": 0.64,
+        "end": 0.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004529942543740617
+      },
+      {
+        "text": "，",
+        "start": 0.94,
+        "end": 1.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.22542785108089447
+      },
+      {
+        "text": "再",
+        "start": 1.54,
+        "end": 1.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000014305104514278355
+      },
+      {
+        "text": "见",
+        "start": 1.78,
+        "end": 2.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000021815061700181104
+      },
+      {
+        "text": "。",
+        "start": 2.12,
+        "end": 2.121,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.3486848473548889
+      }
+    ],
+    "transcription_id": "RLOuS1fF7ymZ9xgZz1YB",
+    "audio_duration_secs": 2.481633
+  }
+]

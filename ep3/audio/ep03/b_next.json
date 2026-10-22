@@ -1,0 +1,75 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.6782691478729248,
+    "text": "夏集，你多大了？",
+    "words": [
+      {
+        "text": "夏",
+        "start": 0.64,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00237171514891088
+      },
+      {
+        "text": "集",
+        "start": 0.94,
+        "end": 1.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -1.9077707529067993
+      },
+      {
+        "text": "，",
+        "start": 1.4,
+        "end": 1.5,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0006167178507894278
+      },
+      {
+        "text": "你",
+        "start": 2.18,
+        "end": 2.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "多",
+        "start": 2.42,
+        "end": 2.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "大",
+        "start": 2.68,
+        "end": 3.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.06198946386575699
+      },
+      {
+        "text": "了",
+        "start": 3.08,
+        "end": 3.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.06198946386575699
+      },
+      {
+        "text": "？",
+        "start": 3.4,
+        "end": 3.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000037788631743751466
+      }
+    ],
+    "transcription_id": "4lFdoYHovSDj3F9jvBrx",
+    "audio_duration_secs": 3.918367
+  }
+]

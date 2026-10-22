@@ -1,0 +1,123 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9142640233039856,
+    "text": "你们好，我是你们的汉语老师。",
+    "words": [
+      {
+        "text": "你",
+        "start": 0.36,
+        "end": 0.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001490105023549404
+      },
+      {
+        "text": "们",
+        "start": 0.46,
+        "end": 0.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001490105023549404
+      },
+      {
+        "text": "好",
+        "start": 0.66,
+        "end": 1.02,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "，",
+        "start": 1.02,
+        "end": 1.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004887569048150908
+      },
+      {
+        "text": "我",
+        "start": 1.78,
+        "end": 1.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00018106251081917435
+      },
+      {
+        "text": "是",
+        "start": 1.98,
+        "end": 2.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00018106251081917435
+      },
+      {
+        "text": "你",
+        "start": 2.18,
+        "end": 2.32,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002658331868587993
+      },
+      {
+        "text": "们",
+        "start": 2.32,
+        "end": 2.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002658331868587993
+      },
+      {
+        "text": "的",
+        "start": 2.46,
+        "end": 2.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -9.536738616588991e-7
+      },
+      {
+        "text": "汉",
+        "start": 2.62,
+        "end": 2.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00008904537389753386
+      },
+      {
+        "text": "语",
+        "start": 2.88,
+        "end": 3.06,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00008904537389753386
+      },
+      {
+        "text": "老",
+        "start": 3.08,
+        "end": 3.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000040531076592742465
+      },
+      {
+        "text": "师",
+        "start": 3.48,
+        "end": 3.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000040531076592742465
+      },
+      {
+        "text": "。",
+        "start": 3.7,
+        "end": 3.701,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.020549608394503593
+      }
+    ],
+    "transcription_id": "Zjfr0TxfjZggA467bMNO",
+    "audio_duration_secs": 4.179592
+  }
+]

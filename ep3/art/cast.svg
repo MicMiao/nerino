@@ -1,0 +1,420 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="ink-edge" x="-6%" y="-6%" width="112%" height="112%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="soft-12" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation="12"/></filter>
+    <filter id="soft-3" x="-10%" y="-40%" width="120%" height="180%"><feGaussianBlur stdDeviation="3"/></filter>
+    <!-- Any drawing as a dark shadow: someone we can't see yet. -->
+    <filter id="silhouette"><feColorMatrix type="matrix" values="0 0 0 0 0.11  0 0 0 0 0.106  0 0 0 0 0.094  0 0 0 1 0"/></filter>
+    <radialGradient id="jelly" cx="42%" cy="38%" r="70%">
+      <stop offset="0" stop-color="#f8faf5"/>
+      <stop offset=".65" stop-color="#dde7df"/>
+      <stop offset="1" stop-color="#c3d2c8"/>
+    </radialGradient>
+    <radialGradient id="jelly-halo">
+      <stop offset=".76" stop-color="#dde7df" stop-opacity="0"/>
+      <stop offset=".82" stop-color="#dde7df" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#dde7df" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- The tadpole's signature: a lucky red thread (红绳) tied in a bow. -->
+    <g id="red-bow">
+      <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M0 0C-6-10-14-4-8 2Z M0 0C6-10 14-4 8 2Z M0 0l-4 10 M0 0l5 10" stroke="#f1ecdf" stroke-width="5"/>
+        <path d="M0 0C-6-10-14-4-8 2Z M0 0C6-10 14-4 8 2Z M0 0l-4 10 M0 0l5 10" stroke="#b3392b" stroke-width="2.4"/>
+      </g>
+      <circle r="2.8" fill="#b3392b"/>
+    </g>
+
+    <!-- Stage 1: the egg, tadpole asleep inside -->
+    <symbol id="tp-egg" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="url(#jelly-halo)"/>
+      <circle cx="100" cy="100" r="62" fill="url(#jelly)" stroke="#afc2b6" stroke-width="2"/>
+      <path d="M58 80A46 46 0 0 1 102 50" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+      <g filter="url(#ink-edge)" fill="#1c1b18">
+        <path d="M108 92C132 82 146 118 122 130C136 114 126 100 110 108Z"/>
+        <circle cx="94" cy="106" r="24"/>
+      </g>
+      <path d="M80 102q6 5 12 0" fill="none" stroke="#f1ecdf" stroke-width="2.6" stroke-linecap="round"/>
+      <ellipse cx="85" cy="115" rx="4.5" ry="3" fill="#e8a0b0" opacity=".85"/>
+      <use href="#red-bow" transform="translate(126 116) scale(.8)"/>
+    </symbol>
+
+    <!-- Stage 2: hatchling -->
+    <symbol id="tp-hatch" viewBox="0 0 220 140">
+      <g filter="url(#ink-edge)" fill="#1c1b18">
+        <path d="M96 52C126 40 150 82 206 58C170 96 136 84 100 92Z"/>
+        <circle cx="70" cy="72" r="38"/>
+      </g>
+      <circle cx="54" cy="62" r="11.5" fill="#fff"/>
+      <circle cx="80" cy="57" r="10.5" fill="#fff"/>
+      <circle cx="51" cy="63.5" r="5.8" fill="#1c1b18"/>
+      <circle cx="77" cy="58.5" r="5.4" fill="#1c1b18"/>
+      <circle cx="49" cy="60.5" r="2.2" fill="#fff"/>
+      <circle cx="75" cy="55.8" r="2" fill="#fff"/>
+      <ellipse cx="46" cy="84" rx="7" ry="4.5" fill="#e8a0b0" opacity=".85"/>
+      <path d="M56 88q8 6 16 0" fill="none" stroke="#f1ecdf" stroke-width="2.8" stroke-linecap="round"/>
+      <use href="#red-bow" transform="translate(106 72)"/>
+    </symbol>
+
+    <!-- Stage 3: back legs (Unit 5) -->
+    <symbol id="tp-legs2" viewBox="0 0 220 150">
+      <g fill="none" stroke="#2c2b26" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M108 86l18 18-14 9"/>
+        <path d="M94 92l10 24-16 4"/>
+      </g>
+      <g fill="none" stroke="#2c2b26" stroke-width="3" stroke-linecap="round">
+        <path d="M112 113l-7 3M112 113l-4 6M88 120l-6-1M88 120l-4 5"/>
+      </g>
+      <g filter="url(#ink-edge)" fill="#1c1b18">
+        <path d="M98 54C124 44 146 80 194 62C162 94 134 84 102 92Z"/>
+        <ellipse cx="70" cy="72" rx="40" ry="37"/>
+      </g>
+      <circle cx="54" cy="61" r="11.5" fill="#fff"/>
+      <circle cx="80" cy="56" r="10.5" fill="#fff"/>
+      <circle cx="51" cy="62.5" r="5.8" fill="#1c1b18"/>
+      <circle cx="77" cy="57.5" r="5.4" fill="#1c1b18"/>
+      <circle cx="49" cy="59.5" r="2.2" fill="#fff"/>
+      <circle cx="75" cy="54.8" r="2" fill="#fff"/>
+      <ellipse cx="46" cy="84" rx="7" ry="4.5" fill="#e8a0b0" opacity=".85"/>
+      <path d="M56 88q8 6 16 0" fill="none" stroke="#f1ecdf" stroke-width="2.8" stroke-linecap="round"/>
+      <use href="#red-bow" transform="translate(110 70)"/>
+    </symbol>
+
+    <!-- Stage 4: front legs (Unit 10), skin turning green -->
+    <symbol id="tp-legs4" viewBox="0 0 220 160">
+      <g fill="none" stroke="#2a3a2e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M110 88l20 18-15 10"/>
+        <path d="M96 96l10 26-17 4"/>
+        <path d="M58 104l-4 20-10 3"/>
+        <path d="M80 108l3 18-9 5"/>
+      </g>
+      <g filter="url(#ink-edge)" fill="#26332b">
+        <path d="M100 58C120 50 136 76 170 66C148 90 126 84 104 92Z"/>
+        <ellipse cx="72" cy="76" rx="41" ry="36"/>
+      </g>
+      <circle cx="56" cy="61" r="12" fill="#fff"/>
+      <circle cx="84" cy="57" r="11" fill="#fff"/>
+      <circle cx="53" cy="62.5" r="6" fill="#1c1b18"/>
+      <circle cx="81" cy="58.5" r="5.6" fill="#1c1b18"/>
+      <circle cx="51" cy="59.5" r="2.2" fill="#fff"/>
+      <circle cx="79" cy="55.8" r="2" fill="#fff"/>
+      <ellipse cx="48" cy="86" rx="7" ry="4.5" fill="#e8a0b0" opacity=".85"/>
+      <path d="M58 90q8 6 16 0" fill="none" stroke="#f1ecdf" stroke-width="2.8" stroke-linecap="round"/>
+      <use href="#red-bow" transform="translate(108 72)"/>
+    </symbol>
+
+    <!-- Stage 5: frog (Unit 15), thread moved to the wrist -->
+    <symbol id="tp-frog" viewBox="0 0 200 190">
+      <g fill="#5e9a63" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="50" cy="152" rx="30" ry="18"/>
+        <ellipse cx="150" cy="152" rx="30" ry="18"/>
+      </g>
+      <ellipse cx="100" cy="128" rx="54" ry="44" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="141" rx="33" ry="27" fill="#f4efe1"/>
+      <g fill="#4f8a58">
+        <circle cx="62" cy="120" r="6"/>
+        <circle cx="140" cy="116" r="5"/>
+        <circle cx="134" cy="146" r="4"/>
+      </g>
+      <ellipse cx="100" cy="90" rx="52" ry="34" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="72" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="128" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="92" rx="50" ry="30" fill="#6ba56e"/>
+      <circle cx="72" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="128" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="73" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="127" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="70.5" cy="58" r="2.4" fill="#fff"/>
+      <circle cx="124.5" cy="58" r="2.4" fill="#fff"/>
+      <path d="M74 98q26 18 52 0" fill="none" stroke="#2f5a3a" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="62" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <ellipse cx="138" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <g fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="76" cy="168" rx="13" ry="8"/>
+        <ellipse cx="124" cy="168" rx="13" ry="8"/>
+      </g>
+      <use href="#red-bow" transform="translate(84 160) scale(.9)"/>
+    </symbol>
+
+    <!-- 乌龟老师: turtle teacher, 120 years old -->
+    <symbol id="ch-turtle" viewBox="0 0 260 200">
+      <path d="M104 160L14 132" stroke="#b89b5e" stroke-width="4" stroke-linecap="round"/>
+      <path d="M84 154l4-7M60 147l4-7M36 140l4-7" stroke="#8a7240" stroke-width="2.5" stroke-linecap="round"/>
+      <g fill="#93a17f" stroke="#5e6b4d" stroke-width="2.5">
+        <ellipse cx="100" cy="160" rx="17" ry="12"/>
+        <ellipse cx="192" cy="160" rx="17" ry="12"/>
+        <ellipse cx="226" cy="142" rx="14" ry="8"/>
+      </g>
+      <path d="M92 126C74 120 62 110 58 98" stroke="#93a17f" stroke-width="24" stroke-linecap="round" fill="none"/>
+      <path d="M76 148C74 72 216 64 224 148Z" fill="#8b6b3f" stroke="#5c4526" stroke-width="3"/>
+      <g fill="none" stroke="#5c4526" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M134 98L158 90L180 100L178 124L154 132L134 122Z"/>
+        <path d="M134 98L114 110L114 134L134 122"/>
+        <path d="M178 124L200 130L206 146"/>
+        <path d="M114 134L102 146M154 132L154 146M158 90L156 76M180 100L198 92"/>
+      </g>
+      <path d="M70 146H230Q234 158 222 160H80Q66 158 70 146Z" fill="#a7844f" stroke="#5c4526" stroke-width="2.5"/>
+      <circle cx="52" cy="92" r="27" fill="#93a17f" stroke="#5e6b4d" stroke-width="2.5"/>
+      <path d="M35 90q5 4 10 0M57 88q5 4 10 0" fill="none" stroke="#1c1b18" stroke-width="2.4" stroke-linecap="round"/>
+      <g fill="#ffffff" fill-opacity=".35" stroke="#1c1b18" stroke-width="2.4">
+        <circle cx="40" cy="89" r="9.5"/>
+        <circle cx="62" cy="87" r="9.5"/>
+      </g>
+      <path d="M49.5 88q1.5-3 3 0M71.5 86l10-2" fill="none" stroke="#1c1b18" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M30 76q7-7 16-2M54 73q7-7 16-2" fill="none" stroke="#f7f3ea" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M42 106q6 3 12 0" fill="none" stroke="#5e6b4d" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M44 113q-4 16 2 30M50 115q0 14 6 26M38 111q-8 12-6 24" fill="none" stroke="#f7f3ea" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- 鸭子: the duck at the pond's front desk -->
+    <symbol id="ch-duck" viewBox="0 0 220 240">
+      <g stroke="#b5782a" stroke-width="2" fill="#e7a23c" stroke-linejoin="round">
+        <path d="M92 206v10M126 206v10" fill="none" stroke-width="5" stroke-linecap="round"/>
+        <path d="M92 214l-18 12h30Z"/>
+        <path d="M126 214l-12 12h30Z"/>
+      </g>
+      <ellipse cx="112" cy="160" rx="62" ry="52" fill="#8c6f4e" stroke="#5e4a33" stroke-width="2.5"/>
+      <ellipse cx="94" cy="170" rx="34" ry="34" fill="#a58763"/>
+      <path d="M122 138C162 126 180 160 162 188C142 192 126 176 122 138Z" fill="#75593c" stroke="#5e4a33" stroke-width="2"/>
+      <path d="M138 172l22-4 2 8-22 4Z" fill="#3d5f8a"/>
+      <path d="M96 118C94 104 90 98 92 90" stroke="#9c7e5a" stroke-width="26" stroke-linecap="round" fill="none"/>
+      <circle cx="92" cy="86" r="34" fill="#9c7e5a" stroke="#5e4a33" stroke-width="2.5"/>
+      <path d="M64 92C44 90 30 98 34 106C50 114 66 108 72 102Z" fill="#e7b53c" stroke="#b5862a" stroke-width="2" stroke-linejoin="round"/>
+      <circle cx="50" cy="97" r="1.8" fill="#8a6420"/>
+      <circle cx="84" cy="80" r="8.5" fill="#fff"/>
+      <circle cx="82" cy="81" r="4.4" fill="#1c1b18"/>
+      <circle cx="80.5" cy="79" r="1.6" fill="#fff"/>
+      <path d="M72 68l20 7" stroke="#1c1b18" stroke-width="3.6" stroke-linecap="round"/>
+      <path d="M68 60C78 36 120 36 126 58Z" fill="#2f3f5c"/>
+      <path d="M62 58h66q3 7-5 8H68q-8-2-6-8Z" fill="#243048"/>
+      <circle cx="98" cy="48" r="4.5" fill="#e7b53c"/>
+      <g transform="rotate(10 162 178)">
+        <rect x="142" y="150" width="40" height="54" rx="3" fill="#c9ad7c" stroke="#7a5e3c" stroke-width="2"/>
+        <rect x="148" y="160" width="28" height="38" fill="#f7f2e6"/>
+        <path d="M152 170h20M152 178h20M152 186h14" stroke="#b9ad96" stroke-width="2"/>
+        <rect x="154" y="146" width="16" height="8" rx="2" fill="#7a7466"/>
+      </g>
+      <rect x="45" y="168" width="10" height="16" rx="2" fill="#6b4b2f"/>
+      <rect x="39" y="182" width="22" height="12" rx="2" fill="#b3392b"/>
+    </symbol>
+
+    <!-- 鲤鱼阿姨: Auntie Carp, always on the phone -->
+    <symbol id="ch-carp" viewBox="0 0 280 190">
+      <path d="M206 94C230 62 262 56 262 70C250 86 250 102 262 118C262 132 230 126 206 94Z" fill="#e0703a" fill-opacity=".9" stroke="#b2542a" stroke-width="2"/>
+      <path d="M110 54C130 30 170 34 186 60C160 55 132 57 110 54Z" fill="#e0703a" fill-opacity=".85"/>
+      <path d="M40 96C64 44 176 36 210 94C176 150 64 146 40 96Z" fill="#f7f2e8" stroke="#c9bba5" stroke-width="2.5"/>
+      <path d="M96 58C120 48 150 52 168 64C160 82 130 88 112 80C100 74 94 66 96 58Z" fill="#e0703a"/>
+      <path d="M150 112C166 106 186 106 196 110C186 126 168 130 152 124Z" fill="#e0703a"/>
+      <circle cx="74" cy="72" r="9" fill="#e0703a"/>
+      <path d="M118 104q8-8 16 0M134 104q8-8 16 0M126 116q8-8 16 0M110 116q8-8 16 0" fill="none" stroke="#d8ccb6" stroke-width="1.6"/>
+      <g transform="rotate(-20 94 70)">
+        <rect x="86" y="54" width="17" height="30" rx="4" fill="#d26f86" stroke="#9c4a5d" stroke-width="2"/>
+        <rect x="89" y="58" width="11" height="10" rx="2" fill="#f6e7ea"/>
+        <path d="M100 54v-9" stroke="#9c4a5d" stroke-width="2.4" stroke-linecap="round"/>
+      </g>
+      <path d="M86 112C96 94 106 80 100 74C112 80 108 102 98 118Z" fill="#e0703a" fill-opacity=".9"/>
+      <circle cx="62" cy="86" r="8.5" fill="#fff"/>
+      <circle cx="61" cy="87" r="4.5" fill="#1c1b18"/>
+      <circle cx="59.5" cy="85" r="1.6" fill="#fff"/>
+      <path d="M56 78l-3-4M61 77v-5M66 78l3-4" stroke="#1c1b18" stroke-width="1.8" stroke-linecap="round"/>
+      <ellipse cx="41" cy="99" rx="7" ry="6" fill="#e27a8e" stroke="#b5566a" stroke-width="1.5"/>
+      <path d="M43 106q-10 8-18 6" fill="none" stroke="#c9bba5" stroke-width="1.8" stroke-linecap="round"/>
+      <ellipse cx="68" cy="104" rx="6" ry="3.6" fill="#e8a0b0" opacity=".85"/>
+      <g fill="#fff" stroke="#cfc6b4" stroke-width="1">
+        <circle cx="84" cy="118" r="3.2"/>
+        <circle cx="80" cy="126" r="3.2"/>
+        <circle cx="74" cy="132" r="3.2"/>
+        <circle cx="67" cy="135" r="3.2"/>
+      </g>
+    </symbol>
+
+    <!-- 螃蟹: the crab who sells tea -->
+    <symbol id="ch-crab" viewBox="0 0 260 210">
+      <g fill="none" stroke="#8f3526" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M86 142l-26 12-10 22M90 152l-22 20-4 22M98 160l-14 24 2 20"/>
+        <path d="M174 142l26 12 10 22M170 152l22 20 4 22M162 160l14 24-2 20"/>
+      </g>
+      <path d="M80 126C62 114 54 98 54 84" stroke="#c8553d" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <path d="M180 126C198 118 210 110 218 102" stroke="#c8553d" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <path d="M52 64V82" stroke="#6b4b2f" stroke-width="3.5"/>
+      <rect x="20" y="20" width="64" height="44" rx="4" fill="#d9b96a" stroke="#9c7b35" stroke-width="2"/>
+      <text x="52" y="54" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="32" fill="#1c1b18">茶</text>
+      <ellipse cx="54" cy="84" rx="15" ry="12" fill="#c8553d" stroke="#8f3526" stroke-width="2.5"/>
+      <path d="M54 82l14-9" stroke="#8f3526" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="222" cy="96" rx="32" ry="7" fill="#6b4b2f"/>
+      <path d="M200 80h13l-2 9h-9Z" fill="#f7f2e6" stroke="#9c8a6a" stroke-width="1.6"/>
+      <ellipse cx="236" cy="80" rx="12" ry="9" fill="#7d5a3c"/>
+      <path d="M224 78q-7-2-9-8M232 71h8" stroke="#7d5a3c" stroke-width="3" stroke-linecap="round" fill="none"/>
+      <ellipse cx="220" cy="104" rx="13" ry="9" fill="#c8553d" stroke="#8f3526" stroke-width="2.5"/>
+      <ellipse cx="130" cy="134" rx="62" ry="40" fill="#c8553d" stroke="#8f3526" stroke-width="3"/>
+      <path d="M100 120q10-8 20 0M140 120q10-8 20 0" fill="none" stroke="#a33f2b" stroke-width="3" stroke-linecap="round"/>
+      <path d="M112 100L106 72M148 100L154 72" stroke="#8f3526" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="104" cy="64" r="11" fill="#fff" stroke="#8f3526" stroke-width="2"/>
+      <circle cx="106" cy="66" r="5.5" fill="#1c1b18"/>
+      <circle cx="104.5" cy="63.5" r="1.9" fill="#fff"/>
+      <circle cx="156" cy="64" r="11" fill="#fff" stroke="#8f3526" stroke-width="2"/>
+      <path d="M149 66q7-6 14 0" fill="none" stroke="#1c1b18" stroke-width="3" stroke-linecap="round"/>
+      <path d="M110 144q20 22 40 0Z" fill="#7a2a1c"/>
+      <ellipse cx="102" cy="142" rx="7" ry="4" fill="#e8a0b0" opacity=".8"/>
+      <ellipse cx="158" cy="142" rx="7" ry="4" fill="#e8a0b0" opacity=".8"/>
+    </symbol>
+
+    <!-- 小猫: the café cat in Beijing -->
+    <symbol id="ch-cat" viewBox="0 0 240 190">
+      <path d="M188 150C222 140 226 100 204 94" stroke="#e3a25b" stroke-width="16" stroke-linecap="round" fill="none"/>
+      <path d="M200 98l6 10" stroke="#c27a34" stroke-width="4" stroke-linecap="round"/>
+      <path d="M44 162C40 108 96 84 142 88C190 92 206 124 202 162Z" fill="#e3a25b" stroke="#a86a2e" stroke-width="2.5"/>
+      <path d="M150 92q-6 16-2 30M170 100q-6 14-2 28M130 90q-4 14 0 26" fill="none" stroke="#c27a34" stroke-width="5" stroke-linecap="round"/>
+      <path d="M48 84L50 50L74 70Z M96 66L114 42L118 80Z" fill="#e3a25b" stroke="#a86a2e" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M53 76L54 58L66 69Z M101 66L111 52L113 73Z" fill="#eaa3ae"/>
+      <circle cx="80" cy="104" r="38" fill="#e3a25b" stroke="#a86a2e" stroke-width="2.5"/>
+      <path d="M72 72l2 12M82 70v12M92 72l-2 12" stroke="#c27a34" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M58 104q8 6 16 0M86 104q8 6 16 0" fill="none" stroke="#1c1b18" stroke-width="3" stroke-linecap="round"/>
+      <path d="M77 113h8l-4 5Z" fill="#d97a8a"/>
+      <path d="M81 118q-4 5-9 2M81 118q4 5 9 2" fill="none" stroke="#1c1b18" stroke-width="2" stroke-linecap="round"/>
+      <path d="M52 116H28M54 122l-22 6M110 116h24M108 122l22 6" stroke="#6b5a45" stroke-width="1.6" stroke-linecap="round"/>
+      <ellipse cx="60" cy="118" rx="7" ry="4" fill="#e8a0b0" opacity=".85"/>
+      <ellipse cx="102" cy="118" rx="7" ry="4" fill="#e8a0b0" opacity=".85"/>
+      <g fill="#f0b978" stroke="#a86a2e" stroke-width="2">
+        <ellipse cx="70" cy="162" rx="16" ry="9"/>
+        <ellipse cx="106" cy="164" rx="16" ry="9"/>
+      </g>
+      <g fill="#4b473f" font-family="Newsreader, Georgia, serif" font-style="italic">
+        <text x="150" y="58" font-size="28">z</text>
+        <text x="170" y="38" font-size="20">z</text>
+        <text x="186" y="22" font-size="14">z</text>
+      </g>
+      <path d="M8 146h26l-3 18H11Z" fill="#f7f2e6" stroke="#8a7a64" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M34 150q8 0 8 6t-9 6" fill="none" stroke="#8a7a64" stroke-width="2"/>
+      <path d="M16 140q-4-8 2-14M26 140q-4-8 2-14" fill="none" stroke="#b8ad9b" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  
+    <!-- Props for the episodes -->
+    <symbol id="seal-hao" viewBox="0 0 60 60">
+      <rect x="3" y="3" width="54" height="54" rx="6" fill="#b3392b"/>
+      <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>
+      <text x="30" y="43" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="34" fill="#f6e3dc">好</text>
+    </symbol>
+    <symbol id="card" viewBox="0 0 120 84">
+      <rect x="2" y="2" width="116" height="80" rx="6" fill="#fbf8f1" stroke="#b9ad96" stroke-width="2"/>
+      <path d="M14 20h52M14 32h40M14 44h46" stroke="#cfc4ad" stroke-width="3" stroke-linecap="round"/>
+      <use href="#tp-hatch" x="10" y="50" width="46" height="29"/>
+      <use href="#seal-hao" x="68" y="30" width="40" height="40" transform="rotate(-8 88 50)"/>
+    </symbol>
+    <symbol id="crack" viewBox="0 0 200 200">
+      <path d="M50 94l14 10 10-13 12 15 12-11 12 13 12-12 14 11 14-9" fill="none" stroke="#5f7568" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M86 106l-4 12M122 106l3 11" fill="none" stroke="#5f7568" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="bubble" viewBox="0 0 20 20">
+      <circle cx="10" cy="10" r="8" fill="#ffffff66" stroke="#8fa89b" stroke-width="1.5"/>
+      <circle cx="7" cy="7" r="2" fill="#fff"/>
+    </symbol>
+    <!-- 蜻蜓: the dragonfly courier, in a delivery helmet -->
+    <symbol id="ch-dragonfly" viewBox="0 0 260 190">
+      <path d="M206 132h40M214 146h28M198 120h32" stroke="#cfc6b0" stroke-width="3" stroke-linecap="round"/>
+      <g fill="#dceff2" fill-opacity=".75" stroke="#8fbcc6" stroke-width="2">
+        <ellipse cx="152" cy="62" rx="50" ry="13" transform="rotate(-24 152 62)"/>
+        <ellipse cx="164" cy="80" rx="44" ry="11" transform="rotate(-6 164 80)"/>
+      </g>
+      <path d="M106 82L198 42M120 85L208 75" stroke="#8fbcc6" stroke-width="1.4"/>
+      <path d="M122 98C152 102 192 106 238 114" stroke="#3a8fa8" stroke-width="12" stroke-linecap="round" fill="none"/>
+      <path d="M148 94v14M168 96v14M188 99v14M208 102v13" stroke="#2a6a7d" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M108 106l-6 15M117 108l-2 16M125 106l3 15" stroke="#2a6a7d" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <ellipse cx="116" cy="96" rx="20" ry="15" fill="#3a8fa8" stroke="#2a6a7d" stroke-width="2"/>
+      <g fill="#e8f6f8" fill-opacity=".85" stroke="#8fbcc6" stroke-width="2">
+        <ellipse cx="98" cy="50" rx="46" ry="13" transform="rotate(-64 98 50)"/>
+        <ellipse cx="130" cy="50" rx="48" ry="13" transform="rotate(-42 130 50)"/>
+      </g>
+      <path d="M78 91L118 9M94 82L166 18" stroke="#8fbcc6" stroke-width="1.4"/>
+      <path d="M106 86L128 112" stroke="#7a5e3c" stroke-width="3" stroke-linecap="round"/>
+      <rect x="120" y="108" width="24" height="19" rx="4" fill="#e9c46a" stroke="#b5862a" stroke-width="2"/>
+      <path d="M126 117.5h12M132 112v11" stroke="#b5862a" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="86" cy="90" r="21" fill="#3a8fa8" stroke="#2a6a7d" stroke-width="2"/>
+      <path d="M66 66C70 44 106 40 112 62Z" fill="#e9c46a" stroke="#b5862a" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M62 66h52q2 5-4 6H66q-6-1-4-6Z" fill="#c9a24a"/>
+      <circle cx="76" cy="83" r="13" fill="#fff" stroke="#2a6a7d" stroke-width="2"/>
+      <circle cx="98" cy="81" r="12" fill="#fff" stroke="#2a6a7d" stroke-width="2"/>
+      <circle cx="73" cy="84" r="6.5" fill="#1c1b18"/>
+      <circle cx="95" cy="82" r="6" fill="#1c1b18"/>
+      <circle cx="71" cy="81" r="2.3" fill="#fff"/>
+      <circle cx="93" cy="79.2" r="2.1" fill="#fff"/>
+      <ellipse cx="70" cy="101" rx="5.5" ry="3.4" fill="#e8a0b0" opacity=".85"/>
+      <path d="M76 104q8 6 16 0" fill="none" stroke="#1c1b18" stroke-width="2.4" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="seal-bu" viewBox="0 0 60 60">
+      <rect x="3" y="3" width="54" height="54" rx="6" fill="#b3392b"/>
+      <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>
+      <text x="30" y="43" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="34" fill="#f6e3dc">不</text>
+    </symbol>
+    <symbol id="seal-xie" viewBox="0 0 60 60">
+      <rect x="3" y="3" width="54" height="54" rx="6" fill="#b3392b"/>
+      <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>
+      <text x="30" y="43" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="34" fill="#f6e3dc">谢</text>
+    </symbol>
+    <symbol id="ch-frog" viewBox="0 0 200 190">
+      <g fill="#5e9a63" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="50" cy="152" rx="30" ry="18"/>
+        <ellipse cx="150" cy="152" rx="30" ry="18"/>
+      </g>
+      <ellipse cx="100" cy="128" rx="54" ry="44" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="141" rx="33" ry="27" fill="#f4efe1"/>
+      <g fill="#4f8a58">
+        <circle cx="62" cy="120" r="6"/>
+        <circle cx="140" cy="116" r="5"/>
+        <circle cx="134" cy="146" r="4"/>
+      </g>
+      <ellipse cx="100" cy="90" rx="52" ry="34" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="72" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <circle cx="128" cy="62" r="19" fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5"/>
+      <ellipse cx="100" cy="92" rx="50" ry="30" fill="#6ba56e"/>
+      <circle cx="72" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="128" cy="60" r="12.5" fill="#fff"/>
+      <circle cx="73" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="127" cy="61" r="6.5" fill="#1c1b18"/>
+      <circle cx="70.5" cy="58" r="2.4" fill="#fff"/>
+      <circle cx="124.5" cy="58" r="2.4" fill="#fff"/>
+      <path d="M74 98q26 18 52 0" fill="none" stroke="#2f5a3a" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="62" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <ellipse cx="138" cy="100" rx="8" ry="5" fill="#e8a0b0" opacity=".85"/>
+      <g fill="#6ba56e" stroke="#3b6a45" stroke-width="2.5">
+        <ellipse cx="76" cy="168" rx="13" ry="8"/>
+        <ellipse cx="124" cy="168" rx="13" ry="8"/>
+      </g>
+      <!-- 李月老师: glasses, a pointer, a green scarf -->
+      <path d="M60 128q40 14 80 0" fill="none" stroke="#b3392b" stroke-width="9" stroke-linecap="round"/>
+      <g fill="none" stroke="#1c1b18" stroke-width="3.4">
+        <circle cx="72" cy="60" r="17"/><circle cx="128" cy="60" r="17"/>
+        <path d="M89 60h22"/>
+      </g>
+      <path d="M150 160L192 96" stroke="#a0784a" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="193" cy="94" r="4.5" fill="#b3392b"/>
+    </symbol>
+    <symbol id="seal-ming" viewBox="0 0 60 60">
+      <rect x="3" y="3" width="54" height="54" rx="6" fill="#b3392b"/>
+      <rect x="8" y="8" width="44" height="44" rx="3" fill="none" stroke="#f6e3dc" stroke-width="2"/>
+      <text x="30" y="43" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, STKaiti, serif" font-size="34" fill="#f6e3dc">名</text>
+    </symbol>
+    <symbol id="ticket" viewBox="0 0 90 60">
+      <rect x="2" y="2" width="86" height="56" rx="5" fill="#fbf8f1" stroke="#b9ad96" stroke-width="2"/>
+      <path d="M12 16h40M12 27h30M12 38h36" stroke="#cfc4ad" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="camera" viewBox="0 0 80 56">
+      <rect x="4" y="12" width="72" height="40" rx="8" fill="#3e4b45" stroke="#1c1b18" stroke-width="2"/>
+      <rect x="26" y="4" width="22" height="12" rx="3" fill="#3e4b45" stroke="#1c1b18" stroke-width="2"/>
+      <circle cx="40" cy="32" r="14" fill="#cfd8d2" stroke="#1c1b18" stroke-width="3"/>
+      <circle cx="40" cy="32" r="7" fill="#1c1b18"/>
+      <circle cx="37" cy="29" r="2.4" fill="#fff"/>
+      <rect x="60" y="17" width="10" height="6" rx="2" fill="#e9c46a"/>
+    </symbol>
+    <symbol id="cup" viewBox="0 0 40 32">
+      <path d="M6 8h24l-3 18a4 4 0 0 1-4 3H13a4 4 0 0 1-4-3Z" fill="#f7f2e6" stroke="#8a7a64" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M30 11q7 0 7 5t-8 6" fill="none" stroke="#8a7a64" stroke-width="2"/>
+      <path d="M10 13h16" stroke="#c9a24a" stroke-width="3" stroke-linecap="round"/>
+      <path d="M14 5q-3-3 0-5M21 5q-3-3 0-5" fill="none" stroke="#b8ad9b" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>

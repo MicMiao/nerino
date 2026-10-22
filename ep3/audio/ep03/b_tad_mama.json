@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9993873238563538,
+    "text": "你是我妈妈吗？",
+    "words": [
+      {
+        "text": "你",
+        "start": 0.44,
+        "end": 0.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000025748875486897305
+      },
+      {
+        "text": "是",
+        "start": 0.58,
+        "end": 0.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000011920922133867862
+      },
+      {
+        "text": "我",
+        "start": 0.78,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000011920922133867862
+      },
+      {
+        "text": "妈",
+        "start": 1.06,
+        "end": 1.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "妈",
+        "start": 1.2,
+        "end": 1.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "吗",
+        "start": 1.44,
+        "end": 1.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00004637133679352701
+      },
+      {
+        "text": "？",
+        "start": 1.7,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000849926145747304
+      }
+    ],
+    "transcription_id": "pbLttDkgywByJe9p30OR",
+    "audio_duration_secs": 2.063673
+  }
+]

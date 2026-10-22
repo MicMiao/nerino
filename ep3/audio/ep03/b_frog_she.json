@@ -1,0 +1,91 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9969025254249573,
+    "text": "他呢？他是你同学吗？",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.64,
+        "end": 0.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.003601732663810253
+      },
+      {
+        "text": "呢",
+        "start": 0.76,
+        "end": 1.24,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "？",
+        "start": 1.24,
+        "end": 1.2409999999999999,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.07003582268953323
+      },
+      {
+        "text": "他",
+        "start": 2.22,
+        "end": 2.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002884823152271565
+      },
+      {
+        "text": "是",
+        "start": 2.42,
+        "end": 2.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002884823152271565
+      },
+      {
+        "text": "你",
+        "start": 2.58,
+        "end": 2.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "同",
+        "start": 2.96,
+        "end": 3.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002396077979938127
+      },
+      {
+        "text": "学",
+        "start": 3.28,
+        "end": 3.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002396077979938127
+      },
+      {
+        "text": "吗",
+        "start": 3.42,
+        "end": 3.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000032186455882765586
+      },
+      {
+        "text": "？",
+        "start": 3.6,
+        "end": 3.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000051616290875244886
+      }
+    ],
+    "transcription_id": "miTW7SHFeeGPlj0W7X5w",
+    "audio_duration_secs": 4.075102
+  }
+]

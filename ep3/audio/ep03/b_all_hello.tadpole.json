@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.6992979049682617,
+    "text": "老师好。",
+    "words": [
+      {
+        "text": "老",
+        "start": 0.44,
+        "end": 0.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000066756979322235566
+      },
+      {
+        "text": "师",
+        "start": 0.56,
+        "end": 0.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000066756979322235566
+      },
+      {
+        "text": "好",
+        "start": 0.78,
+        "end": 1.1,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "。",
+        "start": 1.1,
+        "end": 1.101,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5238375663757324
+      }
+    ],
+    "transcription_id": "bRMHCjexR9zPdZSb5TKE",
+    "audio_duration_secs": 1.515102
+  }
+]

@@ -1,0 +1,75 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.8739569783210754,
+    "text": "对不起，对不起。",
+    "words": [
+      {
+        "text": "对",
+        "start": 0.38,
+        "end": 0.5,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000029802276912960224
+      },
+      {
+        "text": "不",
+        "start": 0.52,
+        "end": 0.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007510157047363464
+      },
+      {
+        "text": "起",
+        "start": 0.64,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007510157047363464
+      },
+      {
+        "text": "，",
+        "start": 1.04,
+        "end": 1.36,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005924526340095326
+      },
+      {
+        "text": "对",
+        "start": 1.36,
+        "end": 1.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -7.152555099310121e-7
+      },
+      {
+        "text": "不",
+        "start": 1.54,
+        "end": 1.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000965590606938349
+      },
+      {
+        "text": "起",
+        "start": 1.7,
+        "end": 1.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000965590606938349
+      },
+      {
+        "text": "。",
+        "start": 1.82,
+        "end": 1.821,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.011051987297832966
+      }
+    ],
+    "transcription_id": "vLip3qhv3W9b06YesiO6",
+    "audio_duration_secs": 2.533878
+  }
+]

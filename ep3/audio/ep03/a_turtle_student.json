@@ -1,0 +1,75 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9955127239227295,
+    "text": "他是我的学生吗？",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.46,
+        "end": 0.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.03374224528670311
+      },
+      {
+        "text": "是",
+        "start": 0.64,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.03374224528670311
+      },
+      {
+        "text": "我",
+        "start": 0.82,
+        "end": 0.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "的",
+        "start": 0.98,
+        "end": 1.26,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "学",
+        "start": 1.26,
+        "end": 1.38,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000019073468138230965
+      },
+      {
+        "text": "生",
+        "start": 1.48,
+        "end": 1.56,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000019073468138230965
+      },
+      {
+        "text": "吗",
+        "start": 1.56,
+        "end": 1.74,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00036638224264606833
+      },
+      {
+        "text": "？",
+        "start": 1.74,
+        "end": 1.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0002632986579556018
+      }
+    ],
+    "transcription_id": "JX5YmKRfpoIJDquEJvrE",
+    "audio_duration_secs": 2.377143
+  }
+]

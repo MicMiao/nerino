@@ -1,0 +1,43 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9984534978866577,
+    "text": "他是谁？",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.74,
+        "end": 0.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002126814564689994
+      },
+      {
+        "text": "是",
+        "start": 1.02,
+        "end": 1.1,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002126814564689994
+      },
+      {
+        "text": "谁",
+        "start": 1.1,
+        "end": 1.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000007986990567587782
+      },
+      {
+        "text": "？",
+        "start": 1.44,
+        "end": 1.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003234816831536591
+      }
+    ],
+    "transcription_id": "YL2OnFvjPkGtmo329X97",
+    "audio_duration_secs": 1.880816
+  }
+]

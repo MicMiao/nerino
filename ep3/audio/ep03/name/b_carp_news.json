@@ -1,0 +1,115 @@
+[
+  {
+    "language_code": "jpn",
+    "language_probability": 0.5168367624282837,
+    "text": "喂，小黑的汉语老师叫李月。",
+    "words": [
+      {
+        "text": "喂",
+        "start": 1.18,
+        "end": 1.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002879285253584385
+      },
+      {
+        "text": "，",
+        "start": 1.32,
+        "end": 1.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002634490556374658
+      },
+      {
+        "text": "小",
+        "start": 2.18,
+        "end": 2.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -8.344646857949556e-7
+      },
+      {
+        "text": "黑",
+        "start": 2.3,
+        "end": 2.5,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0007282227743417025
+      },
+      {
+        "text": "的",
+        "start": 2.5,
+        "end": 2.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "汉",
+        "start": 2.82,
+        "end": 2.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003073934931308031
+      },
+      {
+        "text": "语",
+        "start": 2.94,
+        "end": 3.1,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003073934931308031
+      },
+      {
+        "text": "老",
+        "start": 3.1,
+        "end": 3.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000027418097943154862
+      },
+      {
+        "text": "师",
+        "start": 3.42,
+        "end": 3.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000027418097943154862
+      },
+      {
+        "text": "叫",
+        "start": 3.66,
+        "end": 3.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00000822540732769994
+      },
+      {
+        "text": "李",
+        "start": 3.9,
+        "end": 4.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003349725011503324
+      },
+      {
+        "text": "月",
+        "start": 4.16,
+        "end": 4.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.4714287519454956
+      },
+      {
+        "text": "。",
+        "start": 4.42,
+        "end": 4.421,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.03371158614754677
+      }
+    ],
+    "transcription_id": "LRRO7Fpm1OCjB3r5SS7n",
+    "audio_duration_secs": 4.884898
+  }
+]

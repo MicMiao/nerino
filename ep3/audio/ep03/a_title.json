@@ -1,0 +1,115 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9893953204154968,
+    "text": "第三集，她是我的汉语老师。",
+    "words": [
+      {
+        "text": "第",
+        "start": 0.36,
+        "end": 0.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00033945043105632067
+      },
+      {
+        "text": "三",
+        "start": 0.72,
+        "end": 1.22,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00033945043105632067
+      },
+      {
+        "text": "集",
+        "start": 1.22,
+        "end": 1.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0035429345443844795
+      },
+      {
+        "text": "，",
+        "start": 1.66,
+        "end": 1.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0403890460729599
+      },
+      {
+        "text": "她",
+        "start": 2.42,
+        "end": 2.76,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5766403675079346
+      },
+      {
+        "text": "是",
+        "start": 2.76,
+        "end": 3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5766403675079346
+      },
+      {
+        "text": "我",
+        "start": 3.02,
+        "end": 3.26,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "的",
+        "start": 3.26,
+        "end": 3.52,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "汉",
+        "start": 3.76,
+        "end": 3.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00008785339014139026
+      },
+      {
+        "text": "语",
+        "start": 3.92,
+        "end": 4.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00008785339014139026
+      },
+      {
+        "text": "老",
+        "start": 4.4,
+        "end": 4.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006556489552167477
+      },
+      {
+        "text": "师",
+        "start": 4.64,
+        "end": 4.96,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006556489552167477
+      },
+      {
+        "text": "。",
+        "start": 4.96,
+        "end": 4.961,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0011713793501257896
+      }
+    ],
+    "transcription_id": "bR8FvvRHN08T37SOanTp",
+    "audio_duration_secs": 5.459592
+  }
+]

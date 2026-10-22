@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9520086050033569,
+    "text": "我是中国人。",
+    "words": [
+      {
+        "text": "我",
+        "start": 0.46,
+        "end": 0.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000032186455882765586
+      },
+      {
+        "text": "是",
+        "start": 0.62,
+        "end": 0.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000032186455882765586
+      },
+      {
+        "text": "中",
+        "start": 0.88,
+        "end": 1.22,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000022291887944447808
+      },
+      {
+        "text": "国",
+        "start": 1.24,
+        "end": 1.44,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000022291887944447808
+      },
+      {
+        "text": "人",
+        "start": 1.6,
+        "end": 1.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000022291887944447808
+      },
+      {
+        "text": "。",
+        "start": 1.64,
+        "end": 1.6409999999999998,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5760310888290405
+      }
+    ],
+    "transcription_id": "EMdVPbjN2mICnhKzIlzW",
+    "audio_duration_secs": 2.063673
+  }
+]

@@ -1,0 +1,161 @@
+/* Full-screen stage for episodes and games on the projector. */
+.stage-body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+}
+
+.stage { position: fixed; inset: 0; overflow: hidden; background: #efe9dc; }
+.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* The outer group moves and scales around the actor's anchor point; inner parts turn and
+   squash around the bottom centre of the drawing. */
+.actor { transform-box: view-box; transform-origin: 0 0; }
+.actor-part { transform-box: fill-box; transform-origin: 50% 100%; }
+
+/* Subtitles: a reading panel at the bottom. Each character has its pinyin right above it;
+   the syllable being spoken lights up in red, the ones already said turn dark. */
+.subs {
+  position: absolute;
+  left: 50%;
+  bottom: 2.5vh;
+  transform: translateX(-50%);
+  /* max-content: centred with left: 50%, it would otherwise wrap at half the screen width. */
+  width: max-content;
+  max-width: min(94vw, 1500px);
+  box-sizing: border-box;
+  display: grid;
+  justify-items: center;
+  gap: 0.05em;
+  padding: 0.35em 1.3em 0.55em;
+  border-radius: 22px;
+  background: #fbf8f1f2;
+  border: 1px solid #d6cebb;
+  box-shadow: 0 8px 26px #1c1b1824;
+  text-align: center;
+  pointer-events: none;
+}
+.sub-zh {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-weight: 700;
+  font-size: clamp(34px, 5.2vw, 84px);
+  line-height: 1.9;
+  color: #1c1b18;
+}
+.sub-zh ruby { color: #a49d8f; transition: color 0.12s; ruby-position: over; }
+.sub-zh ruby.said { color: #1c1b18; }
+.sub-zh ruby.now { color: #b3392b; }
+.sub-zh rt {
+  font: 700 0.46em/1 var(--font-ui);
+  color: #8a8478;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.06em;
+}
+.sub-zh ruby.said rt { color: #2f6a5a; }
+.sub-zh ruby.now rt { color: #b3392b; }
+.sub-it {
+  font-family: "Newsreader", "Iowan Old Style", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 32px);
+  line-height: 1.25;
+  color: #3f3b34;
+}
+.sub-who {
+  margin-top: 0.15em;
+  padding: 3px 14px;
+  border-radius: 999px;
+  background: #2f6a5a;
+  color: #f1ecdf;
+  font: 700 clamp(13px, 1.25vw, 19px)/1.3 var(--font-ui);
+  letter-spacing: 0.03em;
+}
+.subs.no-pinyin rt { visibility: hidden; }
+.subs.no-italian .sub-it { display: none; }
+
+/* Title and end cards. */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.35em;
+  text-align: center;
+  background: radial-gradient(closest-side, #f1ecdfee 40%, #f1ecdf99 75%, transparent);
+  pointer-events: none;
+}
+.card-overlay .zh { font-family: var(--font-brush); font-size: clamp(56px, 9vw, 150px); line-height: 1; }
+.card-overlay .py { font: 600 clamp(18px, 2.2vw, 34px)/1.2 var(--font-ui); color: #57534a; }
+.card-overlay .it { font: italic clamp(20px, 2.6vw, 40px)/1.2 "Newsreader", Georgia, serif; color: #3f3b34; }
+
+/* Start screen: sound can only begin after a key press. */
+.splash {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+  background: #f1ecdfd9;
+  text-align: center;
+  padding: 24px;
+}
+.splash h1 { font-family: var(--font-brush); font-weight: 400; font-size: clamp(60px, 10vw, 150px); line-height: 1; }
+.splash p { margin: 0; font-size: clamp(16px, 1.8vw, 24px); color: var(--ink-soft); }
+.splash .keys { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-bottom-width: 3px;
+  border-radius: 6px;
+  background: var(--card);
+  font: 700 0.9em/1.4 var(--font-ui);
+  text-align: center;
+}
+
+/* Small status line for the teacher, bottom left. */
+.hud {
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #1c1b18cc;
+  color: #f1ecdf;
+  font: 700 15px/1.3 var(--font-ui);
+}
+
+.help {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  max-width: 340px;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: #fbf8f1f2;
+  border: 1px solid var(--line);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.help h2 { font-size: 16px; margin: 0 0 6px; }
+.help ul { list-style: none; margin: 0; padding: 0; }
+
+.corner-link {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font: 700 15px/1 var(--font-ui);
+  color: var(--jade);
+  background: #fbf8f1e6;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sub-zh ruby { transition: none; }
+}

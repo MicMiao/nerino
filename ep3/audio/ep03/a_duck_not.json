@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9997000694274902,
+    "text": "不是他，是他。",
+    "words": [
+      {
+        "text": "不",
+        "start": 0.42,
+        "end": 0.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006556489552167477
+      },
+      {
+        "text": "是",
+        "start": 0.58,
+        "end": 0.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006556489552167477
+      },
+      {
+        "text": "他",
+        "start": 0.82,
+        "end": 1.14,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.026605086401104927
+      },
+      {
+        "text": "，",
+        "start": 1.14,
+        "end": 1.74,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000017762025890988298
+      },
+      {
+        "text": "是",
+        "start": 1.74,
+        "end": 1.94,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5759401917457581
+      },
+      {
+        "text": "他",
+        "start": 1.94,
+        "end": 2.3,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5759401917457581
+      },
+      {
+        "text": "。",
+        "start": 2.3,
+        "end": 2.3009999999999997,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.023325225338339806
+      }
+    ],
+    "transcription_id": "0cgJV1O9jFqLU5mzyl3S",
+    "audio_duration_secs": 2.716735
+  }
+]

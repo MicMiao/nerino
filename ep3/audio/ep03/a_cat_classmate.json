@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9969025254249573,
+    "text": "他是你同学吗？",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.42,
+        "end": 0.54,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.04914189502596855
+      },
+      {
+        "text": "是",
+        "start": 0.54,
+        "end": 0.7,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.04914189502596855
+      },
+      {
+        "text": "你",
+        "start": 0.7,
+        "end": 0.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "同",
+        "start": 0.86,
+        "end": 1.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003766942609217949
+      },
+      {
+        "text": "学",
+        "start": 1.28,
+        "end": 1.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00003766942609217949
+      },
+      {
+        "text": "吗",
+        "start": 1.4,
+        "end": 1.58,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000006556489552167477
+      },
+      {
+        "text": "？",
+        "start": 1.58,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00012361239350866526
+      }
+    ],
+    "transcription_id": "krMIZD1TrsGcl8ZTMgne",
+    "audio_duration_secs": 2.011429
+  }
+]

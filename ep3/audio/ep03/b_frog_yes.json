@@ -1,0 +1,83 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9358013868331909,
+    "text": "是，我是汉语老师。",
+    "words": [
+      {
+        "text": "是",
+        "start": 0.7,
+        "end": 0.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000011444026313256472
+      },
+      {
+        "text": "，",
+        "start": 0.86,
+        "end": 1.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00002932505594799295
+      },
+      {
+        "text": "我",
+        "start": 1.54,
+        "end": 1.64,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "是",
+        "start": 1.64,
+        "end": 1.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -5.960462772236497e-7
+      },
+      {
+        "text": "汉",
+        "start": 2,
+        "end": 2.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00009583967766957358
+      },
+      {
+        "text": "语",
+        "start": 2.08,
+        "end": 2.26,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00009583967766957358
+      },
+      {
+        "text": "老",
+        "start": 2.42,
+        "end": 2.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000005483612312673358
+      },
+      {
+        "text": "师",
+        "start": 2.66,
+        "end": 2.86,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000005483612312673358
+      },
+      {
+        "text": "。",
+        "start": 2.86,
+        "end": 2.8609999999999998,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.06993711739778519
+      }
+    ],
+    "transcription_id": "QFtjZQ0qzhB4Q3V4GSvr",
+    "audio_duration_secs": 3.369796
+  }
+]

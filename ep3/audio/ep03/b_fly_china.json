@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9121615886688232,
+    "text": "否是中国人？",
+    "words": [
+      {
+        "text": "否",
+        "start": 0.5,
+        "end": 0.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.38632598519325256
+      },
+      {
+        "text": "是",
+        "start": 0.72,
+        "end": 0.84,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.014249949716031551
+      },
+      {
+        "text": "中",
+        "start": 1.04,
+        "end": 1.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.014249949716031551
+      },
+      {
+        "text": "国",
+        "start": 1.16,
+        "end": 1.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.014249949716031551
+      },
+      {
+        "text": "人",
+        "start": 1.6,
+        "end": 1.72,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -3.576278118089249e-7
+      },
+      {
+        "text": "？",
+        "start": 1.72,
+        "end": 1.82,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.06529712677001953
+      }
+    ],
+    "transcription_id": "WV62YEOWzqH5fICe9cnZ",
+    "audio_duration_secs": 2.168163
+  }
+]

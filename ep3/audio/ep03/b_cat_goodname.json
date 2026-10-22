@@ -1,0 +1,67 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9994460344314575,
+    "text": "李月，好名字。",
+    "words": [
+      {
+        "text": "李",
+        "start": 1,
+        "end": 1.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002254327293485403
+      },
+      {
+        "text": "月",
+        "start": 1.28,
+        "end": 1.5,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5681241750717163
+      },
+      {
+        "text": "，",
+        "start": 1.5,
+        "end": 1.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0010578995570540428
+      },
+      {
+        "text": "好",
+        "start": 2.4,
+        "end": 2.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": 0
+      },
+      {
+        "text": "名",
+        "start": 2.66,
+        "end": 2.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "字",
+        "start": 2.98,
+        "end": 3.16,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "。",
+        "start": 3.16,
+        "end": 3.161,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.5759882926940918
+      }
+    ],
+    "transcription_id": "qaKIW5cxH6eYblJnVCwW",
+    "audio_duration_secs": 3.63102
+  }
+]

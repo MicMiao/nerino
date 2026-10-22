@@ -1,0 +1,59 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9969025254249573,
+    "text": "他是老师吗？",
+    "words": [
+      {
+        "text": "他",
+        "start": 0.76,
+        "end": 1.08,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.05530594289302826
+      },
+      {
+        "text": "是",
+        "start": 1.08,
+        "end": 1.34,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.05530594289302826
+      },
+      {
+        "text": "老",
+        "start": 1.34,
+        "end": 1.46,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000020265558760002023
+      },
+      {
+        "text": "师",
+        "start": 1.58,
+        "end": 1.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000020265558760002023
+      },
+      {
+        "text": "吗",
+        "start": 1.68,
+        "end": 1.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0004906642716377974
+      },
+      {
+        "text": "？",
+        "start": 1.78,
+        "end": 1.88,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005209310256759636
+      }
+    ],
+    "transcription_id": "6U6sI0BZjoWvZOkCdFf0",
+    "audio_duration_secs": 2.194286
+  }
+]
