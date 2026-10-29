@@ -1,0 +1,138 @@
+/* Class app styles: one deliberate light theme for the projector, rice paper and ink. */
+:root {
+  color-scheme: light;
+  --paper: #f2ede1;
+  --paper-deep: #e7e0cf;
+  --card: #fbf8f1;
+  --ink: #1c1b18;
+  --ink-soft: #57534a;
+  --ink-faint: #8f897b;
+  --line: #d6cebb;
+  --jade: #2f6a5a;
+  --jade-deep: #22503f;
+  --jade-soft: #d9e7e0;
+  --lotus: #cf6a83;
+  --seal: #b3392b;
+  --seal-soft: #f4dcd6;
+  --font-ui: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+  --font-brush: "Ma Shan Zheng", "Kaiti SC", "STKaiti", "KaiTi", serif;
+  --step-0: 1rem;
+  --step-1: 1.25rem;
+  --step-2: 1.6rem;
+  --step-3: 2.2rem;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+/* Toggling el.hidden must always hide, even on elements that set their own display. */
+[hidden] { display: none !important; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--step-0) / 1.5 var(--font-ui);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 24px;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand svg { width: 34px; height: 34px; flex: none; }
+.brand-zh { font-family: var(--font-brush); font-size: 1.7rem; line-height: 1; }
+.brand-en { font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.8rem; color: var(--ink-soft); }
+.crumb { color: var(--ink-soft); font-weight: 600; }
+
+.page {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+h1 { font-size: var(--step-3); line-height: 1.15; }
+h2 { font-size: var(--step-1); line-height: 1.25; }
+.lead { max-width: 60ch; color: var(--ink-soft); margin: 8px 0 0; }
+
+button,
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 18px;
+  border: 1px solid var(--jade);
+  border-radius: 8px;
+  background: var(--jade);
+  color: #fff;
+  font: 700 var(--step-0) / 1.2 var(--font-ui);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button:hover, .button:hover { background: var(--jade-deep); border-color: var(--jade-deep); }
+button.secondary, .button.secondary { background: transparent; color: var(--jade); }
+button.secondary:hover, .button.secondary:hover { background: var(--jade-soft); }
+button:disabled { opacity: 0.45; cursor: not-allowed; }
+button:focus-visible, .button:focus-visible, select:focus-visible, a:focus-visible {
+  outline: 3px solid var(--lotus);
+  outline-offset: 2px;
+}
+
+select {
+  min-height: 44px;
+  max-width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--ink);
+  font: inherit;
+}
+
+/* A red seal-style stamp that marks each step's state: pending, passed or failed. */
+.seal {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 2px dashed var(--line);
+  border-radius: 6px;
+  font-family: var(--font-brush);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fff;
+}
+
+[data-state="pass"] .seal { border: 0; background: var(--jade); }
+[data-state="pass"] .seal::after { content: "好"; }
+[data-state="fail"] .seal { border: 0; background: var(--seal); }
+[data-state="fail"] .seal::after { content: "!"; font-family: var(--font-ui); font-weight: 700; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
