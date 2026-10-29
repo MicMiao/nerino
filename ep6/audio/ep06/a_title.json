@@ -1,0 +1,83 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.5187776684761047,
+    "text": "第六集，今天几号？",
+    "words": [
+      {
+        "text": "第",
+        "start": 0.46,
+        "end": 0.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002188075101003051
+      },
+      {
+        "text": "六",
+        "start": 0.68,
+        "end": 1.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002188075101003051
+      },
+      {
+        "text": "集",
+        "start": 1.12,
+        "end": 1.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.002221380127593875
+      },
+      {
+        "text": "，",
+        "start": 1.5,
+        "end": 2.26,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.049917202442884445
+      },
+      {
+        "text": "今",
+        "start": 2.26,
+        "end": 2.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001811964830267243
+      },
+      {
+        "text": "天",
+        "start": 2.48,
+        "end": 2.78,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001811964830267243
+      },
+      {
+        "text": "几",
+        "start": 2.78,
+        "end": 3.1,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0003828269545920193
+      },
+      {
+        "text": "号",
+        "start": 3.1,
+        "end": 3.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000010371154530730564
+      },
+      {
+        "text": "？",
+        "start": 3.4,
+        "end": 3.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.007844001986086369
+      }
+    ],
+    "transcription_id": "fgXe6wG1hiyzSBkZdxZG",
+    "audio_duration_secs": 3.813878
+  }
+]

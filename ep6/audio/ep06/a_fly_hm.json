@@ -1,0 +1,99 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9646034240722656,
+    "text": "9月1号，今天星期几？",
+    "words": [
+      {
+        "text": "9",
+        "start": 0.54,
+        "end": 0.66,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.048589713871479034
+      },
+      {
+        "text": "月",
+        "start": 0.66,
+        "end": 0.92,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000010728830375228426
+      },
+      {
+        "text": "1",
+        "start": 0.92,
+        "end": 1.2,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000056265202147187665
+      },
+      {
+        "text": "号",
+        "start": 1.2,
+        "end": 1.5,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000002264974000354414
+      },
+      {
+        "text": "，",
+        "start": 1.52,
+        "end": 2.12,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0001134808044298552
+      },
+      {
+        "text": "今",
+        "start": 2.12,
+        "end": 2.34,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000034570634852570947
+      },
+      {
+        "text": "天",
+        "start": 2.34,
+        "end": 2.62,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.0000034570634852570947
+      },
+      {
+        "text": "星",
+        "start": 2.62,
+        "end": 2.9,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004410734163684538
+      },
+      {
+        "text": "期",
+        "start": 2.9,
+        "end": 3.18,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000004410734163684538
+      },
+      {
+        "text": "几",
+        "start": 3.18,
+        "end": 3.48,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000023483953555114567
+      },
+      {
+        "text": "？",
+        "start": 3.48,
+        "end": 3.6,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.014342082664370537
+      }
+    ],
+    "transcription_id": "ggOktFldcryk3kOXT880",
+    "audio_duration_secs": 3.892245
+  }
+]

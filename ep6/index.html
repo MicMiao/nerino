@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta charset="utf-8">
+<title>Nerino e il calendario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Ma+Shan+Zheng&family=Newsreader:ital,opsz,wght@1,6..72,400&family=Noto+Serif+SC:wght@700&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/stage.css">
+<style>
+    html, body { height: 100%; }
+    body { margin: 0; overflow: hidden; background: var(--paper); color: var(--ink); font-family: var(--font-ui); }
+    .tools { position: absolute; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; display: flex; gap: 8px; z-index: 5; }
+    .tools button { min-height: 40px; padding: 6px 14px; font-size: 0.95rem; }
+    .tools .round { min-width: 40px; padding: 6px 10px; }
+    .question { top: calc(64px + env(safe-area-inset-top, 0px)); } /* below the buttons */
+    .overlay-page { position: absolute; inset: 0; z-index: 20; overflow-y: auto; background: var(--paper); }
+    .review-in { max-width: 760px; margin: 0 auto; padding: 18px 16px 48px; display: grid; gap: 14px; }
+    .review-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; position: sticky; top: 0; padding-block: 10px; background: var(--paper); z-index: 1; }
+    .review-top h2 { margin: 0; font-size: 1.3rem; }
+    #review h3 { margin: 14px 0 0; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+    #review ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+    #review li { display: flex; gap: 12px; align-items: center; padding: 10px 14px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; }
+    #review li > .line { min-width: 0; display: grid; gap: 2px; }
+    .say { flex: none; width: 46px; height: 46px; padding: 0; border-radius: 50%; display: grid; place-items: center; }
+    .say svg { width: 22px; height: 22px; fill: currentColor; }
+    .say.on { background: var(--seal); }
+    .who { font: 700 0.78rem var(--font-ui); color: var(--jade); letter-spacing: 0.04em; }
+    .who:empty { display: none; }
+    #review .zh { font: 700 1.9rem/2 "Noto Serif SC", serif; }
+    #review .zh rt { font: 600 0.42em/1 var(--font-ui); color: var(--ink-soft); }
+    #review .py { font: 700 1rem/1.3 var(--font-ui); color: var(--jade); }
+    #review .it { font: italic 1rem/1.3 "Newsreader", Georgia, serif; color: #3f3b34; }
+    /* The quiz */
+    #quiz-body { display: grid; gap: 14px; justify-items: stretch; }
+    .qz-count { margin: 0; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+    .qz-prompt { margin: 0; font-size: 1.35rem; }
+    .qz-hear { justify-self: start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 8px 22px; font-size: 1.05rem; }
+    .qz-hear svg { width: 24px; height: 24px; fill: currentColor; }
+    .qz-options { display: grid; gap: 10px; }
+    .qz-option { display: grid; gap: 2px; justify-items: start; text-align: left; min-height: 56px; padding: 12px 16px; background: var(--card); color: var(--ink); border: 2px solid var(--line); border-radius: 14px; font: 600 1.05rem/1.35 var(--font-ui); }
+    .qz-option:not(:disabled):hover { border-color: var(--jade); }
+    .qz-option:disabled { opacity: 1; cursor: default; }
+    .qz-option.right { border-color: var(--jade); background: var(--jade-soft); }
+    .qz-option.wrong { border-color: var(--seal); background: #f6dcd6; }
+    .qz-zh { font: 700 1.7rem/1.3 "Noto Serif SC", serif; }
+    .qz-py { color: var(--jade); font-weight: 700; }
+    .qz-feedback { display: grid; gap: 8px; justify-items: start; }
+    .qz-verdict { margin: 0; font-size: 1.2rem; font-weight: 700; }
+    .qz-verdict.ok { color: var(--jade); }
+    .qz-verdict.no { color: var(--seal); }
+    .qz-answer-zh { font: 700 1.9rem/2 "Noto Serif SC", serif; }
+    .qz-answer-zh rt { font: 600 0.42em/1 var(--font-ui); color: var(--ink-soft); }
+    .qz-answer-it { margin: 0; font: italic 1.05rem/1.3 "Newsreader", Georgia, serif; color: #3f3b34; }
+    .qz-score { margin: 0; font-size: 2.6rem; }
+    .qz-stars { margin: 0; font-size: 2.2rem; color: #e9c46a; letter-spacing: 0.1em; }
+    .qz-msg { margin: 0; max-width: 34rem; }
+    .splash .lead { max-width: 34rem; }
+    /* long Chinese lines (the count to twelve) must wrap on a phone, not stretch every row */
+    #review ul { grid-template-columns: minmax(0, 1fr); }
+    #review .zh, .qz-zh, .qz-answer-zh { display: flex; flex-wrap: wrap; align-items: flex-end; }
+    .splash .hint { display: none; color: var(--ink-soft); }
+    @media (orientation: portrait) and (max-width: 700px) { .splash .hint { display: block; } .splash h1 { font-size: clamp(44px, 14vw, 80px); } }
+
+    #pad { transform-box: fill-box; transform-origin: 50% 50%; }
+    .bubble-q { font: 700 64px "Noto Serif SC", serif; fill: #1c1b18; }
+    #phone { opacity: 0; }
+
+    /* The tadpole's pond card, close up, and the class photo. */
+    .card-name { font: 700 40px "Noto Serif SC", serif; fill: #1c1b18; }
+    .card-py { font: 600 17px "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif; fill: #57534a; }
+    .card-it { font: italic 20px "Newsreader", Georgia, serif; fill: #6b665c; }
+    .card-q { font: 700 64px "Noto Serif SC", serif; fill: #b3392b; }
+    .card-written { font: 700 46px "Noto Serif SC", serif; fill: #1c1b18; }
+    .card-written-py { font: 700 20px "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif; fill: #2f6a5a; }
+    .photo-caption { font: 400 52px "Ma Shan Zheng", "Kaiti SC", serif; fill: #1c1b18; }
+    .photo-py { font: 700 22px "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif; fill: #57534a; }
+    .zzz { font: italic 700 34px "Newsreader", Georgia, serif; fill: #8f897b; }
+
+    /* The question card, across the top so the scene stays visible: pinyin over every
+       character, and each option plays its sound when clicked. */
+    .question {
+      position: absolute;
+      top: 2.5vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, 94vw);
+      display: grid;
+      justify-items: center;
+      gap: clamp(6px, 1.2vh, 14px);
+      padding: clamp(10px, 1.8vh, 22px) clamp(14px, 2vw, 32px) clamp(14px, 2.2vh, 24px);
+      background: #fbf8f1f2;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      box-shadow: 0 10px 30px #1c1b1814;
+      text-align: center;
+    }
+    .q-title {
+      padding: 0 18px;
+      border: 0;
+      border-radius: 18px;
+      background: none;
+      color: var(--ink);
+      font: 400 clamp(40px, 5.6vw, 86px)/2 var(--font-brush);
+      cursor: pointer;
+    }
+    .q-title:hover, .q-title:focus-visible { background: #efe9dc; }
+    .q-title rt { font: 600 0.3em/1 var(--font-ui); color: #57534a; letter-spacing: 0.02em; }
+    .question .it { margin-top: -0.4em; font: italic clamp(18px, 2.2vw, 32px)/1.2 "Newsreader", Georgia, serif; color: #3f3b34; }
+    .q-opts { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(10px, 1.6vw, 26px); margin-top: 4px; }
+    .opt {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      min-width: min(230px, 27vw);
+      padding: 4px 28px 10px;
+      border: 4px solid transparent;
+      border-radius: 24px;
+      background: #3e4b45;
+      color: #f1ecdf;
+      font: inherit;
+      cursor: pointer;
+    }
+    .opt:hover, .opt:focus-visible { background: #2f6a5a; }
+    .opt[aria-pressed="true"] { border-color: #e9c46a; background: #2f6a5a; }
+    .opt .key { position: absolute; top: 10px; left: 14px; font: 700 clamp(13px, 1.2vw, 17px)/1 var(--font-ui); color: #e9c46a; }
+    .opt .zh { font: 700 clamp(30px, 3.8vw, 58px)/2 "Noto Serif SC", serif; }
+    .opt .zh rt { font: 600 0.42em/1 var(--font-ui); color: #d6e3dc; letter-spacing: 0.02em; }
+    .opt .ear { width: clamp(20px, 2vw, 28px); height: auto; margin-top: -4px; fill: #d6e3dc; }
+    .opt.playing .ear { fill: #e9c46a; }
+    /* Already tried, and the Duck said no. */
+    .opt.tried { background: #77716a; }
+    .opt.tried::after {
+      content: "不";
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 7px;
+      background: #b3392b;
+      color: #f6e3dc;
+      font: 400 26px/1 var(--font-brush);
+      transform: rotate(-8deg);
+    }
+    .q-hint { margin: 0; font: 600 clamp(14px, 1.3vw, 19px)/1.3 var(--font-ui); color: var(--ink-soft); }
+    .q-go { font-size: clamp(16px, 1.6vw, 22px); }
+
+    .name-status { margin: 0; font-size: clamp(14px, 1.3vw, 18px); color: var(--ink-soft); }
+    .name-status strong { color: var(--ink); }
+    .name-status a { color: var(--jade); font-weight: 700; }
+
+    /* Start screen: pick the part and how to play it. */
+    .modes { display: grid; gap: 18px; justify-items: center; margin-top: 8px; }
+    .mode-group { display: grid; gap: 10px; justify-items: center; }
+    .mode-group h2 { margin: 0; font: 700 clamp(18px, 1.8vw, 24px)/1.2 var(--font-ui); }
+    .mode-group h2 span { font-weight: 400; color: var(--ink-soft); margin-left: 6px; }
+    .mode-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .mode-row button { font-size: clamp(15px, 1.4vw, 19px); }
+    .mode-row button kbd { color: var(--ink); }
+
+    /* Live mode: whose turn it is, and how long they have. */
+    .cue {
+      position: absolute;
+      top: 3vh;
+      left: 50%;
+      transform: translateX(-50%);
+      display: grid;
+      justify-items: center;
+      gap: 8px;
+      min-width: min(460px, 80vw);
+      padding: 12px 26px 14px;
+      background: #1c1b18e6;
+      color: #f1ecdf;
+      border-radius: 18px;
+      text-align: center;
+      pointer-events: none;
+    }
+    .cue-label { font: 700 clamp(13px, 1.2vw, 16px)/1 var(--font-ui); letter-spacing: 0.12em; text-transform: uppercase; color: #e9c46a; }
+    .cue-who { font: 700 clamp(26px, 3.2vw, 46px)/1.1 var(--font-ui); }
+    .cue-who small { display: block; margin-top: 4px; font: italic clamp(16px, 1.6vw, 22px)/1.2 "Newsreader", Georgia, serif; color: #d6cebb; }
+    .cue-bar { width: 100%; height: 8px; border-radius: 4px; background: #ffffff2e; overflow: hidden; }
+    .cue-bar i { display: block; height: 100%; width: 100%; background: #e9c46a; }
+    .cue-hint { font: 600 clamp(12px, 1.1vw, 15px)/1 var(--font-ui); color: #b9b2a2; }
+
+    /* After a playing: what to do next. */
+    .end {
+      position: absolute;
+      left: 50%;
+      bottom: 3vh;
+      transform: translateX(-50%);
+      display: grid;
+      justify-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      background: #fbf8f1f2;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      max-width: 94vw;
+    }
+    .end-title { margin: 0; font: 700 clamp(16px, 1.6vw, 22px)/1.2 var(--font-ui); }
+    .tag-text { font: 700 26px "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", sans-serif; fill: #f1ecdf; }
+  </style>
+</head>
+<body>
+<main class="stage">
+<svg class="scene" viewBox="200 110 1200 900" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Lo stagno: lo sportello con il calendario, e i personaggi intorno">
+      <g id="bg">
+        <rect width="1600" height="1100" fill="#efe9dc"/>
+        <g filter="url(#soft-12)">
+          <ellipse cx="800" cy="300" rx="980" ry="56" fill="#e1dacb"/>
+          <ellipse cx="560" cy="440" rx="720" ry="40" fill="#e6dfd1"/>
+          <ellipse cx="1150" cy="200" rx="620" ry="34" fill="#e4ddcf"/>
+        </g>
+        <g fill="#9aa39c" opacity=".5" filter="url(#soft-3)">
+          <ellipse cx="300" cy="480" rx="100" ry="15"/>
+          <ellipse cx="1310" cy="440" rx="80" ry="12"/>
+          <ellipse cx="1200" cy="540" rx="66" ry="11"/>
+          <ellipse cx="540" cy="520" rx="70" ry="10"/>
+        </g>
+        <g fill="none" stroke="#c9c2b1" stroke-width="1.6">
+          <ellipse cx="800" cy="690" rx="430" ry="60"/>
+          <ellipse cx="800" cy="700" rx="510" ry="76" opacity=".6"/>
+        </g>
+        <g filter="url(#ink-edge)"><ellipse cx="300" cy="840" rx="150" ry="36" fill="#3e4b45"/></g>
+        <path d="M300 840L410 830M300 840L372 866M300 840L200 858M300 840L208 822" stroke="#7d8a82" stroke-width="1.6" opacity=".8"/>
+        <g stroke="#55594f" stroke-linecap="round" fill="none">
+          <path d="M50 900C56 780 68 660 52 520" stroke-width="3.4"/>
+          <path d="M84 900C90 800 106 700 124 600" stroke-width="2.8"/>
+          <path d="M116 900C112 820 118 740 104 660" stroke-width="2.2"/>
+          <path d="M150 900C158 820 168 760 188 700" stroke-width="2.8"/>
+          <path d="M182 900C182 850 188 800 200 760" stroke-width="2.2"/>
+          <path d="M24 900C26 820 20 740 30 660" stroke-width="2.2"/>
+          <path d="M56 600l8-4M58 650l8-4M54 700l8-4M100 640l8-4M110 700l8-4M160 760l8-4M166 800l8-4" stroke-width="1.6"/>
+        </g>
+        <path d="M1400 900C1394 800 1406 680 1392 572" stroke="#4a5a4c" stroke-width="6" fill="none"/>
+        <path d="M1500 900C1494 820 1502 720 1488 626" stroke="#4a5a4c" stroke-width="5" fill="none"/>
+        <g transform="translate(1392 560)" fill="#f2c2cd" stroke="#d9788f" stroke-width="2.2">
+          <ellipse rx="20" ry="50" transform="rotate(-52) translate(0 -30)"/>
+          <ellipse rx="20" ry="50" transform="rotate(52) translate(0 -30)"/>
+          <ellipse rx="20" ry="53" transform="rotate(-20) translate(0 -34)"/>
+          <ellipse rx="20" ry="53" transform="rotate(20) translate(0 -34)"/>
+          <ellipse rx="19" ry="56" transform="translate(0 -38)"/>
+          <ellipse cx="0" cy="-8" rx="12" ry="6" fill="#e9c46a" stroke="#c9a24a"/>
+        </g>
+        <path d="M1488 626C1470 598 1478 564 1488 544C1498 564 1506 598 1488 626Z" fill="#f2c2cd" stroke="#d9788f" stroke-width="2.2"/>
+      </g>
+
+      <g id="pad">
+        <g filter="url(#ink-edge)"><ellipse cx="800" cy="680" rx="330" ry="82" fill="#3e4b45"/></g>
+        <path d="M800 680L1136 667L1136 694Z" fill="#efe9dc"/>
+        <path d="M800 680L1084 709M800 680L1017 734M800 680L918 750M800 680L800 756M800 680L683 750M800 680L583 734M800 680L516 709M800 680L493 680M800 680L516 651M800 680L583 626M800 680L683 610M800 680L800 604M800 680L918 610M800 680L1017 626M800 680L1084 651" stroke="#7d8a82" stroke-width="1.8" opacity=".8"/>
+        <g transform="translate(958 684)"><use href="#seal-hao" width="48" height="48" opacity=".9" transform="rotate(-8 24 24)"/></g>
+      </g>
+      <g id="props"></g>
+      <g id="actors"></g>
+      <g id="front"></g>
+      <g id="phone">
+        <path id="phone-signal" fill="none" stroke="#9aa39c" stroke-width="4" stroke-dasharray="2 12" stroke-linecap="round"/>
+        <circle r="122" fill="#fbf8f1" stroke="#b9ad96" stroke-width="3"/>
+        <circle r="112" fill="none" stroke="#e7e0cf" stroke-width="2"/>
+        <g id="phone-cat"></g>
+        <g id="phone-marks"></g>
+        <text y="-138" text-anchor="middle" font-family="Ma Shan Zheng, Kaiti SC, serif" font-size="32" fill="#4b473f">北京 · Pechino</text>
+      </g>
+      <g id="fx"></g>
+    </svg>
+
+<div class="card-overlay" id="title-card" hidden><div class="zh"></div><div class="py"></div><div class="it"></div></div>
+    <section class="question" id="question" hidden>
+      <button type="button" class="q-title" id="q-title" title="Ascolta la domanda"></button>
+      <div class="it" id="q-it"></div>
+      <div class="q-opts" id="q-opts"></div>
+      <p class="q-hint" id="q-hint"></p>
+      <button type="button" class="q-go" id="q-go" hidden></button>
+    </section>
+
+    <div class="subs" id="subs" hidden></div>
+    <div class="hud" id="hud" hidden></div>
+
+    <div class="cue" id="cue" hidden>
+      <span class="cue-label">Tocca a</span>
+      <span class="cue-who" id="cue-who"></span>
+      <span class="cue-bar"><i id="cue-fill"></i></span>
+      <span class="cue-hint">→ avanti · Spazio: più tempo</span>
+    </div>
+
+    <div class="end" id="end" hidden>
+      <p class="end-title" id="end-title"></p>
+      <div class="mode-row" id="end-actions"></div>
+    </div>
+
+    
+    <div class="tools">
+      <button type="button" class="secondary round" id="btn-pause" aria-label="Pausa">⏸</button>
+      <button type="button" class="secondary round" id="btn-skip" aria-label="Avanti">⏭</button>
+      <button type="button" class="secondary" data-review>Frasi</button>
+      <button type="button" class="secondary" data-quiz>Esercizi</button>
+    </div>
+
+    <div class="splash" id="splash">
+      <h1>第六集 · 今天几号？</h1>
+      <p>Episodio 6 · Che giorno è oggi?</p>
+      <p class="lead">Il calendario della Papera è fermo a settembre: che giorno è oggi? Guarda l’episodio, poi riascolta le frasi e fai gli esercizi. Accendi l’audio.</p>
+      <p class="hint">Sul telefono si vede meglio in orizzontale.</p>
+      <div class="modes">
+        <div class="mode-row">
+          <button type="button" data-part="1" data-mode="ai">▶ Parte 1</button>
+          <button type="button" class="secondary" data-part="2" data-mode="ai">▶ Parte 2</button>
+          <button type="button" class="secondary" data-review>Frasi</button>
+          <button type="button" class="secondary" data-quiz>Esercizi</button>
+        </div>
+      </div>
+      <p><a class="button secondary" href="../ep5/">← Episodio 5</a></p>
+      <p><kbd>Spazio</kbd> pausa · <kbd>→</kbd> avanti · <kbd>P</kbd> pinyin · <kbd>I</kbd> italiano</p>
+    </div>
+
+    <section id="review" class="overlay-page" hidden aria-label="Frasi dell’episodio">
+      <div class="review-in">
+        <div class="review-top"><h2>Frasi · 今天几号？</h2><button type="button" id="review-close">Chiudi</button></div>
+        <p style="margin:0;color:var(--ink-soft)">Tocca l’altoparlante per riascoltare. Il nome del girino: 小黑 (xiǎo hēi).</p>
+        <div id="review-body"></div>
+      </div>
+    </section>
+
+    <section id="quiz" class="overlay-page" hidden aria-label="Esercizi">
+      <div class="review-in">
+        <div class="review-top"><h2>Esercizi · ascolto</h2><button type="button" id="quiz-close">Chiudi</button></div>
+        <div id="quiz-body"></div>
+      </div>
+    </section>
+</main>
+<script type="module" src="js/ep06.js"></script>
+<script type="module">
+  import './js/review.js';
+  import './js/quiz.js';
+  const press = (init) => document.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, ...init }));
+  document.getElementById('btn-pause').addEventListener('click', (e) => { e.currentTarget.blur(); press({ code: 'Space', key: ' ' }); });
+  document.getElementById('btn-skip').addEventListener('click', (e) => { e.currentTarget.blur(); press({ key: 'ArrowRight' }); });
+</script>
+</body>
+</html>
