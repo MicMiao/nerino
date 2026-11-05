@@ -19,15 +19,19 @@ export async function loadArt(url = 'art/cast.svg') {
 
 // ---- A clock that stops when the teacher pauses ------------------------------------------
 
-export const clock = { paused: false, skipping: false };
+export const clock = { paused: false, skipping: false, aborting: false };
+
+// What a wait() throws while an episode is being wound back (episode-kit.js, rewind): it ends the old run.
+export class Rewind extends Error {}
 
 export function wait(ms) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     let left = ms;
     let last = performance.now();
     const tick = (now) => {
       const dt = now - last;
       last = now;
+      if (clock.aborting) return reject(new Rewind());
       if (clock.skipping) return resolve();
       if (!clock.paused) left -= dt;
       if (left <= 0) resolve();

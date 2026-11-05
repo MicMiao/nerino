@@ -85,6 +85,7 @@ const ep = await createEpisode({
   tagSpot: (who) => (who === 'cat' ? [CALL[0] + 190, CALL[1] - 100] : null),
   viewTop: 110,
   extraRoles: { frog: { role: 'frog', it: 'La Maestra Rana', zh: '李月老师' } },
+  rewind: true, // ← goes back one line, as often as the class wants to hear it again
 });
 ep.stage = { duck, turtle, crab, carp, tadpole, dragonfly: fly, cat, frog };
 const { sound, fx } = ep;

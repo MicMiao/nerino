@@ -6,7 +6,7 @@
 //   recorded  the students' takes from the booth (AI voice where a line has no take)
 // An episode only writes its scenes: createEpisode() gives back say(), sayAll() and friends.
 import { Sound } from './sound.js';
-import { Subtitles, clock, fillRuby, loadArt, setupControls, svg, wait } from './stage.js';
+import { Rewind, Subtitles, clock, fillRuby, finishRunningAnimations, loadArt, setupControls, svg, wait } from './stage.js';
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -24,7 +24,8 @@ export const nameForSubtitles = (py) => {
 // viewTop: where the page's view of the scene starts (its viewBox y), to keep name tags on screen.
 // extraRoles: characters who aren't one of the seven students, e.g. { frog: { it: 'La Maestra Rana', zh: '青蛙老师' } }.
 // Their voices are marked "guest": true in the episode JSON and always speak with the AI voice.
-export async function createEpisode({ id, unitPage, parts, reset, stage = {}, tagSpot, viewTop = 0, extraRoles = {} }) {
+// rewind: true turns on the ← key, which goes back one line (and again, and again) while a part plays.
+export async function createEpisode({ id, unitPage, parts, reset, stage = {}, tagSpot, viewTop = 0, extraRoles = {}, rewind = false }) {
   const [EP, CAST] = await Promise.all([
     fetch(`episodes/${id}.json`).then((r) => r.json()),
     fetch('units/cast.json').then((r) => r.json()),
@@ -170,12 +171,63 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
   }
   ep.stopVoices = stopVoices;
 
+  // ---- Going back (rewind: true) --------------------------------------------------------------
+  // A part is a script, so "back one line" means: end this run, start the part again, and run everything
+  // before the wanted line silently at top speed (like holding →: animations finish at once, no voices),
+  // then play from there. Every say()/sayAll() counts as one line, in order.
+
+  let lineNo = -1; // the line being said now
+  let catchUp = -1; // while >= 0: lines before this one are run silently
+  let lastRun = null;
+  let winding = false;
+  let pendingBack = 0;
+  let unwound = Promise.resolve();
+  let pump = 0;
+
+  function skipFrames() {
+    if (pump) return;
+    const frame = () => {
+      clock.skipping = true;
+      finishRunningAnimations();
+      pump = requestAnimationFrame(frame);
+    };
+    frame();
+  }
+  function stopSkipping() {
+    cancelAnimationFrame(pump);
+    pump = 0;
+    clock.skipping = false;
+  }
+  // Called as every line starts: true while we are catching up (the line is run without sound).
+  function beginLine() {
+    if (clock.aborting) throw new Rewind();
+    lineNo += 1;
+    if (lineNo === catchUp) {
+      catchUp = -1;
+      stopSkipping();
+    }
+    return lineNo < catchUp;
+  }
+
+  if (rewind) {
+    window.addEventListener('unhandledrejection', (e) => {
+      if (e.reason instanceof Rewind) e.preventDefault(); // a background wait() ended with the old run
+    });
+  }
+
   // ---- Saying lines -------------------------------------------------------------------------
 
   // pace: stretches (or squeezes) the pauses around this one line; the default is the episode's own "pace".
   // onPlay (optional): called when the voice starts, with the audio clock and the word timings, to sync an animation to it.
   ep.say = async (lineId, actor, { keep = 700, subtitles = true, pace = EP.pace ?? 1, onPlay } = {}) => {
+    const silent = rewind && beginLine();
     const line = ep.line(lineId);
+    if (silent) {
+      const live = ep.mode === 'live' && line.who !== 'narrator' && !EP.voices[line.who]?.guest;
+      const voice = live ? null : await voiceFor(lineId).catch(() => null);
+      if (voice) onPlay?.({ startedAt: sound.ctx.currentTime, timings: voice.timings, ctx: sound.ctx });
+      return;
+    }
     // Live mode silences the characters only; the narrator always speaks with the AI voice.
     if (ep.mode === 'live' && line.who !== 'narrator' && !EP.voices[line.who]?.guest) return sayLive(lineId, line, actor, { subtitles });
     const voice = await voiceFor(lineId);
@@ -206,7 +258,15 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
   // Everyone at once (a line with "who": "all"): every voice together, every character moving.
   // onPlay (optional): like ep.say, for a line the whole class says.
   ep.sayAll = async (lineId, actors = [], { keep = 900, onPlay } = {}) => {
+    const silent = rewind && beginLine();
     const line = ep.line(lineId);
+    if (silent) {
+      if (ep.mode !== 'live') {
+        const timings = await timingsAt(`audio/${id}/${lineId}.${(line.voices || [])[0]}.json`);
+        onPlay?.({ startedAt: sound.ctx.currentTime, timings, ctx: sound.ctx });
+      }
+      return;
+    }
     if (ep.mode === 'live') return sayLive(lineId, line, null, { actors });
     subs.render(line, { speaker: 'Tutti' });
     await wait(LEAD_IN * (EP.pace ?? 1));
@@ -450,30 +510,77 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
     (extra[0] || buttons[0]).focus();
   }
 
-  ep.play = async (part, chosenMode) => {
+  // from: the line to start at (> 0 only when going back: the lines before it are run silently, see rewind).
+  ep.play = async (part, chosenMode, from = 0) => {
     if (ep.running) return;
     ep.running = true;
+    let release;
+    unwound = new Promise((resolve) => (release = resolve));
     ep.mode = chosenMode;
+    lastRun = { part, mode: chosenMode };
+    lineNo = -1;
+    catchUp = from > 0 ? from : -1;
     $('#splash').hidden = true;
     document.getAnimations().forEach((a) => a.cancel());
     fx.replaceChildren();
     clearOverlays();
     sound.stopAmbience(0.3);
     reset(part);
+    if (catchUp > 0) skipFrames();
     await sound.unlock();
     await loadTakes();
-    controls.setHud(`Parte ${part} · ${MODE_NAMES[ep.mode]}`);
+    controls.setHud(from > 0 ? '◀ Indietro' : `Parte ${part} · ${MODE_NAMES[ep.mode]}`);
     setTimeout(() => {
       if (!clock.paused) controls.setHud('');
     }, 4000);
     let extra = [];
+    let wound = false;
     try {
       extra = (await parts[part]()) || [];
+    } catch (err) {
+      if (!(err instanceof Rewind)) throw err;
+      wound = true; // the teacher went back: the next run is already on its way
     } finally {
       ep.running = false;
+      if (pump) stopSkipping();
+      catchUp = -1;
+      release();
     }
-    showEnd(part, extra);
+    if (!wound) showEnd(part, extra);
   };
+
+  // ←: back to the line before the one being said (while a part plays), or to its last line (at the end bar).
+  async function goBack() {
+    if (!lastRun) return;
+    if (winding) {
+      pendingBack += 1; // pressed again while the part is being wound back: one more line
+      return;
+    }
+    const here = catchUp >= 0 ? catchUp : lineNo;
+    const target = ep.running ? Math.max(0, here - 1) : !$('#end').hidden ? Math.max(0, here) : -1;
+    if (target < 0) return;
+    const { part, mode } = lastRun;
+    winding = true;
+    try {
+      if (ep.running) {
+        if (clock.paused) await controls.togglePause();
+        clock.aborting = true;
+        stopVoices();
+        skipFrames();
+        const unwoundInTime = await Promise.race([unwound.then(() => true), new Promise((r) => setTimeout(() => r(false), 5000))]);
+        clock.aborting = false;
+        if (!unwoundInTime) {
+          stopSkipping();
+          controls.setHud('Non riesco a tornare indietro');
+          return;
+        }
+      }
+      ep.play(part, mode, Math.max(0, target - pendingBack));
+    } finally {
+      winding = false;
+      pendingBack = 0;
+    }
+  }
 
   async function handleKey(e) {
     const key = e.key.toLowerCase();
@@ -490,6 +597,11 @@ export async function createEpisode({ id, unitPage, parts, reset, stage = {}, ta
         confirmPick();
         return true;
       }
+    }
+    if (rewind && e.key === 'ArrowLeft') {
+      e.preventDefault();
+      if (!e.repeat) goBack();
+      return true;
     }
     if (!ep.running) {
       if (KEYS[key]) {
