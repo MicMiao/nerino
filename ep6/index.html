@@ -296,6 +296,7 @@
 
     
     <div class="tools">
+      <button type="button" class="secondary round" id="btn-back" aria-label="Indietro">⏮</button>
       <button type="button" class="secondary round" id="btn-pause" aria-label="Pausa">⏸</button>
       <button type="button" class="secondary round" id="btn-skip" aria-label="Avanti">⏭</button>
       <button type="button" class="secondary" data-review>Frasi</button>
@@ -316,7 +317,7 @@
         </div>
       </div>
       <p><a class="button secondary" href="../ep5/">← Episodio 5</a></p>
-      <p><kbd>Spazio</kbd> pausa · <kbd>→</kbd> avanti · <kbd>P</kbd> pinyin · <kbd>I</kbd> italiano</p>
+      <p><kbd>Spazio</kbd> pausa · <kbd>→</kbd> avanti · <kbd>←</kbd> indietro · <kbd>P</kbd> pinyin · <kbd>I</kbd> italiano</p>
     </div>
 
     <section id="review" class="overlay-page" hidden aria-label="Frasi dell’episodio">
@@ -341,6 +342,7 @@
   const press = (init) => document.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true, ...init }));
   document.getElementById('btn-pause').addEventListener('click', (e) => { e.currentTarget.blur(); press({ code: 'Space', key: ' ' }); });
   document.getElementById('btn-skip').addEventListener('click', (e) => { e.currentTarget.blur(); press({ key: 'ArrowRight' }); });
+  document.getElementById('btn-back').addEventListener('click', (e) => { e.currentTarget.blur(); press({ key: 'ArrowLeft' }); });
 </script>
 </body>
 </html>

@@ -78,6 +78,7 @@ const ep = await createEpisode({
   tagSpot: (who) => (who === 'cat' ? [CALL[0] + 190, CALL[1] - 100] : null),
   viewTop: 110,
   extraRoles: { frog: { role: 'frog', it: 'La Maestra Rana', zh: '李月老师' } },
+  rewind: true, // ← goes back one line, as often as the class wants to hear it again
 });
 ep.stage = { duck, turtle, crab, carp, tadpole, dragonfly: fly, cat, frog };
 const { sound, fx } = ep;
@@ -660,9 +661,13 @@ async function partTwo() {
   look(frog, tadpole.x);
   await say('b_frog_come', frog);
   await weekRow.show();
-  const chant = syncWords(DAYS.map((_, k) => [k * 3, () => (weekRow.light(k), hop(tadpole, 22))]));
-  if (ep.mode === 'live') chant.live();
-  await ep.sayAll('b_all_week', ALL, { keep: 600, onPlay: chant.onPlay });
+  // The days go round the pond, one voice each, so every day is heard clearly (a chorus of seven blurred them).
+  const relay = [tadpole, duck, crab, carp, turtle, fly, frog];
+  for (let k = 0; k < 7; k++) {
+    weekRow.light(k);
+    hop(relay[k], 22);
+    await say(`b_day${k + 1}`, relay[k], { keep: 300 });
+  }
 
   // Three Wednesdays.
   await weekRow.hide();
