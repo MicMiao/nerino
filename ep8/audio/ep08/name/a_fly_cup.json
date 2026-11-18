@@ -1,0 +1,75 @@
+[
+  {
+    "language_code": "zho",
+    "language_probability": 0.9990334510803223,
+    "text": "小黑，这是你的。",
+    "words": [
+      {
+        "text": "小",
+        "start": 0.8,
+        "end": 0.98,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -8.344646857949556e-7
+      },
+      {
+        "text": "黑",
+        "start": 0.98,
+        "end": 1.38,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00001645074735279195
+      },
+      {
+        "text": "，",
+        "start": 1.38,
+        "end": 1.4,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.00005876845170860179
+      },
+      {
+        "text": "这",
+        "start": 2.16,
+        "end": 2.42,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000021934269170742482
+      },
+      {
+        "text": "是",
+        "start": 2.42,
+        "end": 2.68,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.000021934269170742482
+      },
+      {
+        "text": "你",
+        "start": 2.7,
+        "end": 3.06,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "的",
+        "start": 3.06,
+        "end": 3.38,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -4.768370445162873e-7
+      },
+      {
+        "text": "。",
+        "start": 3.38,
+        "end": 3.381,
+        "type": "word",
+        "speaker_id": "speaker_0",
+        "logprob": -0.02425636351108551
+      }
+    ],
+    "transcription_id": "xSdJAtQucntezwBKpilm",
+    "audio_duration_secs": 3.918367
+  }
+]
